@@ -169,6 +169,15 @@ QPushButton *Dontsubmit;
 
 
 ```
+```cpp
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    window w;
+    w.show();
+    return a.exec();
+}
+```
 Just as widgets can contain other widgets, layouts can be used to provide different levels of grouping for widgets. Here, we want to display a label alongside a line edit at the top of a window, above a table view showing the results of a query,Thats what we called **Nested Layout**
 ### Bug report Form
 we need befaure using them to knew whats is the diffre
