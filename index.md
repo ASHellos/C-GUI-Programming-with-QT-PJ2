@@ -1,5 +1,5 @@
 
-# Programming Widget Layoutjj
+# Programming Widget Layout
 
 ## <span style="color:red">Introduction:</span>
 
