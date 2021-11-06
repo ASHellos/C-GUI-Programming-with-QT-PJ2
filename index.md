@@ -18,7 +18,7 @@ _Qt inclut un ensemble de classes de gestion de disposition qui sont utilisées 
 *   Bug report Form
 *   Grid Layout
 
-#### 1-Experimenting with QHBOXLayout
+#### <span style="color:yellow">1-Experimenting with QHBOXLayout</span>
 ```cpp
 class mywindow:public QWidget
 {
