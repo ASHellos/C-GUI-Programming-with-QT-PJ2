@@ -182,17 +182,7 @@ int main(int argc, char *argv[])
 
 ![furmulaire](https://user-images.githubusercontent.com/93833171/140618191-7c602867-109b-4296-b2f5-7b01fea81709.PNG)
 ### <span style="color:blue">4-Grid Layout</span>
-Just as widgets can ![furmulaire](https://user-
-contain other widgets, layouts can be used to provide different levels of grouping for widgets. Here, we want to display a label alongside a line edit at the top of a window, above a table view showing the results of a query,Thats what we called **Nested Layout**
-### Bug report Form
-we need befaure using them to knew whats is the diffre
-The QBoxLayout class lines up widgets horizontally or vertically. QHBoxLayout and QVBoxLayout are convenience subclasses of QBoxLayout. QGridLayout lays out widgets in cells by dividing the available space into rows and columns. 
-***QFormLayout***, on the other hand, sets its children in a two-column form with labels in the left column and input fields in the right column.
-### __****Grid Layout****__
- **QGridLayout** lays out widgets in cells by dividing the available space into rows and columns.
- QGridLayout takes the space made available to it (by its parent layout or by the parentWidget()), divides it up into rows and columns, and puts each widget it manages into the correct cell. 
- If the GridLayout is resized, all items in the layout will be rearranged. It is similar to the widget-based QGridLayout. All visible children of the GridLayout element will belong to the layout.
- 
+
  ![2021-11-06 18_56_09-CS311 _ Signal and Slots](https://user-images.githubusercontent.com/93819249/140619234-62baf751-ad69-4ea7-937d-14a3e629db99.png)
 ```c++
 class window:public QWidget{
@@ -201,23 +191,21 @@ class window:public QWidget{
 protected:
     QVBoxLayout *mainlayout;
     QGridLayout *gridlayout;
-    QPushButton* gridbutton[10];
+    QPushButton* gridbutton[10]  //for the number of pushbutton;
     QGroupBox* gridgroup;
     QLCDNumber* qlcd;
     QPushButton* enter;
 
-
 public:
     window(QWidget *parents=nullptr):QWidget(parents){
 gridlayout= new QGridLayout;
-        qlcd= new QLCDNumber(6);
-        qlcd->setMinimumHeight(80);
+        qlcd= new QLCDNumber(6);//for showing the number by the componnent LCDNumber with assume that at max it can contains 6 digits
+        qlcd->setMinimumHeight(80);// to set a minimu height of 80 pixels for the lcd number
         setWindowTitle("Numeric Keypad");
-        //setGeometry(250,250,500,500);
         mainlayout = new QVBoxLayout();
         setLayout(mainlayout);
         mainlayout->setSpacing(2);
-        mainlayout->addWidget(qlcd);
+        mainlayout->addWidget(qlcd);// to add the lcd at the top of layout
         mainlayout->addLayout(gridlayout);
 gridbutton[0]=new QPushButton(QString::number(0));
 
@@ -232,4 +220,17 @@ gridlayout->addWidget(gridbutton[i],((9-i)/3), (i-1)%3);
 };
 
 ```
+
+Just as widgets can ![furmulaire](https://user-
+contain other widgets, layouts can be used to provide different levels of grouping for widgets. Here, we want to display a label alongside a line edit at the top of a window, above a table view showing the results of a query,Thats what we called **Nested Layout**
+### Bug report Form
+we need befaure using them to knew whats is the diffre
+The QBoxLayout class lines up widgets horizontally or vertically. QHBoxLayout and QVBoxLayout are convenience subclasses of QBoxLayout. QGridLayout lays out widgets in cells by dividing the available space into rows and columns. 
+***QFormLayout***, on the other hand, sets its children in a two-column form with labels in the left column and input fields in the right column.
+### __****Grid Layout****__
+ **QGridLayout** lays out widgets in cells by dividing the available space into rows and columns.
+ QGridLayout takes the space made available to it (by its parent layout or by the parentWidget()), divides it up into rows and columns, and puts each widget it manages into the correct cell. 
+ If the GridLayout is resized, all items in the layout will be rearranged. It is similar to the widget-based QGridLayout. All visible children of the GridLayout element will belong to the layout.
+ 
+
 
