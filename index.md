@@ -192,4 +192,44 @@ The QBoxLayout class lines up widgets horizontally or vertically. QHBoxLayout an
  **QGridLayout** lays out widgets in cells by dividing the available space into rows and columns.
  QGridLayout takes the space made available to it (by its parent layout or by the parentWidget()), divides it up into rows and columns, and puts each widget it manages into the correct cell. 
  If the GridLayout is resized, all items in the layout will be rearranged. It is similar to the widget-based QGridLayout. All visible children of the GridLayout element will belong to the layout.
+ 
+ ![2021-11-06 18_56_09-CS311 _ Signal and Slots](https://user-images.githubusercontent.com/93819249/140619234-62baf751-ad69-4ea7-937d-14a3e629db99.png)
+```c++
+class window:public QWidget{
+
+  //constructeur
+protected:
+    QVBoxLayout *mainlayout;
+    QGridLayout *gridlayout;
+    QPushButton* gridbutton[10];
+    QGroupBox* gridgroup;
+    QLCDNumber* qlcd;
+    QPushButton* enter;
+
+
+public:
+    window(QWidget *parents=nullptr):QWidget(parents){
+gridlayout= new QGridLayout;
+        qlcd= new QLCDNumber(6);
+        qlcd->setMinimumHeight(80);
+        setWindowTitle("Numeric Keypad");
+        //setGeometry(250,250,500,500);
+        mainlayout = new QVBoxLayout();
+        setLayout(mainlayout);
+        mainlayout->setSpacing(2);
+        mainlayout->addWidget(qlcd);
+        mainlayout->addLayout(gridlayout);
+gridbutton[0]=new QPushButton(QString::number(0));
+
+      for (int i=10;i>0 ;i-- ) {
+          gridbutton[i]=new QPushButton(QString::number(i));
+gridlayout->addWidget(gridbutton[i],((9-i)/3), (i-1)%3);
+            }
+      gridlayout->addWidget(gridbutton[0]);
+        enter = new QPushButton("Enter");
+      gridlayout->addWidget(enter, 3, 1,1,2);
+}
+};
+
+```
 
