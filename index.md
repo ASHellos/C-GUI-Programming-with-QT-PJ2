@@ -143,10 +143,10 @@ public:
 ```
 here is the following form:
 
-
+```cpp
 ![rrrccc](https://user-images.githubusercontent.com/93833171/140626361-48775e84-baad-4433-acaf-769f29afb3d6.PNG)
 
-
+```
 ### <span style="color:blue">3-Bug report Form</span>   {#Bug_report_Form}
 *Before starting work, we need to know some necessary libraries in order to complete this work:*
 Like,QFormlayout :This sets children widgets in a two-column form with labels in the left column and input fields in the right column.
