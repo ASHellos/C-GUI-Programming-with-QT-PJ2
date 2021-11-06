@@ -1,5 +1,4 @@
 <link rel="icon" href="https://i2.wp.com/www.icon0.com/wp-content/uploads/2021/05/stock-photo-tick-icon-sign-design-13148.jpg?fit=400%2C400&ssl=1" />
-<title> dsqd </title>
 # Programming Widget Layout
 
 ## Introduction:
@@ -56,6 +55,8 @@ int main(int argc, char *argv[])
     return a.exec();
 }
 
+```
+voila la forme suivante:
 ```
 ![qhboxlayouts](https://user-images.githubusercontent.com/93833171/140616506-8e02ac1b-a25a-459f-94aa-a1cfc69d0337.PNG)
 
