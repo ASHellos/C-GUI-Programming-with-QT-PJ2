@@ -179,6 +179,7 @@ int main(int argc, char *argv[])
 }
 ```
 <span style="color:black">here is the following form:</span>
+
 ![furmulaire](https://user-images.githubusercontent.com/93833171/140618191-7c602867-109b-4296-b2f5-7b01fea81709.PNG)
 
 Just as widgets can ![furmulaire](https://user-
