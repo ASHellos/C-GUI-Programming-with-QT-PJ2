@@ -77,25 +77,25 @@ public:
         main_layouts=new QVBoxLayout();
         setLayout(main_layouts);
 
-
+      //label&LineEdits_Name
      formlables_name=new QLabel("Name:",this);
      formEdits_name=new QLineEdit(this);
-
+      //label&LineEdits_Campany
      formlables_company=new QLabel("Campany:",this);
      formEdits_company=new QLineEdit(this);
-
+      //label&LineEdits_Phone
      formlables_phone=new QLabel("Phone:",this);
      formEdits_phone=new QLineEdit(this);
-
+     //label&LineEdits_Email
      formlables_email=new QLabel("Email:",this);
      formEdits_email=new QLineEdit(this);
-
+     //label&LineEdits_formlables_problem_title
      formlables_problem_title=new QLabel("Problem Title:",this);
      formEdits_problem_title=new QLineEdit(this);
-
+      //label&LineEdits_Summary  
      formlables_summary=new QLabel("Summary Information:",this);
      formEdits_summary=new QTextEdit(this);
-
+     //label&LineEdits_reproducibility
      lable_reproducibility=new QLabel("Reproducibility:",this);
      box_rep=new QComboBox();
      box_rep->addItem("Always");
