@@ -1,4 +1,6 @@
-<link rel="icon" href="https://i2.wp.com/www.icon0.com/wp-content/uploads/2021/05/stock-photo-tick-icon-sign-design-13148.jpg?fit=400%2C400&ssl=1" />
+<title> dsqd</title>
+
+<ico rel="icon" href="https://i2.wp.com/www.icon0.com/wp-content/uploads/2021/05/stock-photo-tick-icon-sign-design-13148.jpg?fit=400%2C400&ssl=1" />
 # Programming Widget Layout
 
 ## Introduction:
@@ -18,7 +20,7 @@ _Qt inclut un ensemble de classes de gestion de disposition qui sont utilisées 
 *   Bug report Form
 *   Grid Layout
 
-##### Experimenting with QHBOXLayout
+### Experimenting with QHBOXLayout
 ```cpp
 class mywindow:public QWidget
 {
@@ -56,7 +58,7 @@ int main(int argc, char *argv[])
 }
 
 
-##voila la forme suivante:
+voila la forme suivante:
 ```
 ![qhboxlayouts](https://user-images.githubusercontent.com/93833171/140616506-8e02ac1b-a25a-459f-94aa-a1cfc69d0337.PNG)
 
