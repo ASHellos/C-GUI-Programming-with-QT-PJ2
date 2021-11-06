@@ -178,7 +178,10 @@ int main(int argc, char *argv[])
     return a.exec();
 }
 ```
-Just as widgets can contain other widgets, layouts can be used to provide different levels of grouping for widgets. Here, we want to display a label alongside a line edit at the top of a window, above a table view showing the results of a query,Thats what we called **Nested Layout**
+<span style="color:black">here is the following form:</span>
+images.githubusercontent.com/93833171/140618132-f2292d38-562f-47dd-9674-ca5744a8f20e.PNG)
+Just as widgets can ![furmulaire](https://user-
+contain other widgets, layouts can be used to provide different levels of grouping for widgets. Here, we want to display a label alongside a line edit at the top of a window, above a table view showing the results of a query,Thats what we called **Nested Layout**
 ### Bug report Form
 we need befaure using them to knew whats is the diffre
 The QBoxLayout class lines up widgets horizontally or vertically. QHBoxLayout and QVBoxLayout are convenience subclasses of QBoxLayout. QGridLayout lays out widgets in cells by dividing the available space into rows and columns. 
