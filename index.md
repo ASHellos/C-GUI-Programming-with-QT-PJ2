@@ -18,7 +18,7 @@ _Qt inclut un ensemble de classes de gestion de disposition qui sont utilisées 
 *   Bug report Form
 *   Grid Layout
 
-### Experimenting with QHBOXLayout
+##### Experimenting with QHBOXLayout
 ```cpp
 class mywindow:public QWidget
 {
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 }
 
 
-voila la forme suivante:
+##voila la forme suivante:
 ```
 ![qhboxlayouts](https://user-images.githubusercontent.com/93833171/140616506-8e02ac1b-a25a-459f-94aa-a1cfc69d0337.PNG)
 
