@@ -141,7 +141,7 @@ public:
         return a.exec();
     }
 ```
-<span style="color:black">here is the following form:</span>
+here is the following form:
 
 <span styl![rrrccc](https://user-images.githubusercontent.com/93833171/140626107-8db98e5d-8a89-4c13-8d82-4b892c48927a.PNG)
 
