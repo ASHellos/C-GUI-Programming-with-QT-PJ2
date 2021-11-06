@@ -213,10 +213,14 @@ gridlayout= new QGridLayout;
         mainlayout->addWidget(qlcd);// to add the lcd at the top of layout
         mainlayout->addLayout(gridlayout);
 gridbutton[0]=new QPushButton(QString::number(0));
-
-      for (int i=10;i>0 ;i-- ) {
+        
+      for (int i=10;i>0 ;i-- ) {//This loop stores numbers in a variable (Grid button) with difference index after converting them from integer to strings and putting them in a pushbutton.   //(9-i)
           gridbutton[i]=new QPushButton(QString::number(i));
-gridlayout->addWidget(gridbutton[i],((9-i)/3), (i-1)%3);
+          
+gridlayout->addWidget(gridbutton[i],((9-i)/3), (i-1)%3);//And here you put the numbers stored in the variable into a form by placing each number in a specific place in a specific order. 
+ //addWidget(QWidget *widget, int row=(9-i)/3 , int column=(i-1)%3)  To start from the top right
+
+
             }
       gridlayout->addWidget(gridbutton[0]);
         enter = new QPushButton("Enter");
@@ -227,6 +231,7 @@ gridlayout->addWidget(gridbutton[i],((9-i)/3), (i-1)%3);
 ```
 
 ```cpp
+//its present just how to show the window
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
