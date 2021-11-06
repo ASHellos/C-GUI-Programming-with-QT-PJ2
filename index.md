@@ -14,12 +14,12 @@ _Qt inclut un ensemble de classes de gestion de disposition qui sont utilisées 
 
 ### <span style="color:orange">After using the acquired knowledge, the following models were created.</span>
 
-* [Nested](#a)
-*   Nested Layouts
-*   Bug report Form
-*   Grid Layout
+* [Experimenting with QHBOXLayout](#Experimenting with QHBOXLayout)
+* [Nested Layouts](#Nested Layouts)
+* [Bug report Form](#Bug report Form)
+* [Grid Layout](#Grid Layout)
 
-#### <span style="color:blue">1-Experimenting with QHBOXLayout</span> {#a}
+#### <span style="color:blue">1-Experimenting with QHBOXLayout</span> {#Experimenting with QHBOXLayout}
 ```cpp
 class mywindow:public QWidget
 {
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 
 
 
-### <span style="color:blue">3-Bug report Form</span>
+### <span style="color:blue">3-Bug report Form</span> {#Bug report Form}
 ```cpp
 class window:public QWidget{
 
@@ -181,7 +181,7 @@ int main(int argc, char *argv[])
 <span style="color:black">here is the following form:</span>
 
 ![furmulaire](https://user-images.githubusercontent.com/93833171/140618191-7c602867-109b-4296-b2f5-7b01fea81709.PNG)
-### <span style="color:blue">4-Grid Layout</span>
+### <span style="color:blue">4-Grid Layout</span> {#Grid Layout}
 
 
 ```c++
