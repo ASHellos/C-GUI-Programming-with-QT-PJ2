@@ -63,6 +63,9 @@ int main(int argc, char *argv[])
 
 
 ### <span style="color:blue">3-Bug report Form</span>   {#Bug_report_Form}
+*Before starting work, we need to know some necessary libraries in order to complete this work:*
+Like,QFormlayout :This sets children in a two-column form with labels in the left column and input fields in the right column.
+
 ```cpp
 class window:public QWidget{
 
@@ -182,6 +185,9 @@ int main(int argc, char *argv[])
 ![furmulaire](https://user-images.githubusercontent.com/93833171/140618191-7c602867-109b-4296-b2f5-7b01fea81709.PNG)
 ### <span style="color:blue">4-Grid Layout</span> {#Grid_Layout}
 
+ **QGridLayout** lays out widgets in cells by dividing the available space into rows and columns.
+ QGridLayout takes the space made available to it (by its parent layout or by the parentWidget()), divides it up into rows and columns, and puts each widget it manages into the correct cell. 
+ If the GridLayout is resized, all items in the layout will be rearranged. It is similar to the widget-based QGridLayout. All visible children of the GridLayout element will belong to the layout.
 
 ```c++
 class window:public QWidget{
@@ -237,11 +243,3 @@ contain other widgets, layouts can be used to provide different levels of groupi
 ### Bug report Form
 we need befaure using them to knew whats is the diffre
 The QBoxLayout class lines up widgets horizontally or vertically. QHBoxLayout and QVBoxLayout are convenience subclasses of QBoxLayout. QGridLayout lays out widgets in cells by dividing the available space into rows and columns. 
-***QFormLayout***, on the other hand, sets its children in a two-column form with labels in the left column and input fields in the right column.
-### __****Grid Layout****__
- **QGridLayout** lays out widgets in cells by dividing the available space into rows and columns.
- QGridLayout takes the space made available to it (by its parent layout or by the parentWidget()), divides it up into rows and columns, and puts each widget it manages into the correct cell. 
- If the GridLayout is resized, all items in the layout will be rearranged. It is similar to the widget-based QGridLayout. All visible children of the GridLayout element will belong to the layout.
- 
-
-
