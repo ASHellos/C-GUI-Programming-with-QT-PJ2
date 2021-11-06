@@ -22,7 +22,8 @@ _Qt inclut un ensemble de classes de gestion de disposition qui sont utilisées 
 
 1.  We will start by using the main function in the data:
 
-```cpp int main(int argc, char* argv[]) { QApplication app(argc, argv);
+```cpp
+int main(int argc, char* argv[]) { QApplication app(argc, argv);
 
 QWidget* window = new QWidget(); window->setWindowTitle("QHBoxLayout Test");
 
