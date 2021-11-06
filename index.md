@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
 
 ### <span style="color:blue">3-Bug report Form</span>   {#Bug_report_Form}
 *Before starting work, we need to know some necessary libraries in order to complete this work:*
-Like,QFormlayout :This sets children in a two-column form with labels in the left column and input fields in the right column.
+Like,QFormlayout :This sets children widgets in a two-column form with labels in the left column and input fields in the right column.
 
 ```cpp
 class window:public QWidget{
