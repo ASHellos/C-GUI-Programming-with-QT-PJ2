@@ -59,9 +59,88 @@ int main(int argc, char *argv[])
  <span style="color:black">here is the following form:</span>
 
 ![qhboxlayouts](https://user-images.githubusercontent.com/93833171/140616506-8e02ac1b-a25a-459f-94aa-a1cfc69d0337.PNG)
+### <span style="color:blue">2-Nested Layouts</span>  {#Nested_Layouts}
+```cpp
+#include "mainwindow.h"
+
+#include <QApplication>
+#include<QWidget>
+#include<QLabel>
+#include<QLineEdit>
+#include<QPushButton>
+#include<QCheckBox>
+#include<QHBoxLayout>
+#include<QVBoxLayout>
+#include<QGridLayout>
+#include<QGroupBox>
+#include<QLCDNumber>
+#include<QColor>
+#include<QLabel>
+#include<QLineEdit>
+#include<QSpacerItem>
+
+
+class window:public QWidget{
+
+  //constructeur
+protected:
+    QHBoxLayout *mainlayout;
+    QVBoxLayout *leftlayout;
+    QHBoxLayout *topleftlayout;
+    QVBoxLayout *rightlayout;
+    QLabel *name;
+    QLineEdit *edit;
+    QPushButton *search;
+    QPushButton *close;
+    QCheckBox *box;
+    QCheckBox *box1;
 
 
 
+public:
+    window(QWidget *parents=nullptr):QWidget(parents){    
+        setWindowTitle("Nested layout");
+        mainlayout = new QHBoxLayout();
+        leftlayout = new QVBoxLayout();
+        topleftlayout = new QHBoxLayout();
+        rightlayout = new QVBoxLayout();
+        setLayout(mainlayout);
+        mainlayout->addLayout(leftlayout);
+        leftlayout->addLayout(topleftlayout);
+        mainlayout->addLayout(rightlayout);
+        leftlayout->addStretch(40);
+        leftlayout->setSpacing(30);
+        name =new QLabel("Name:");
+        edit=new QLineEdit;
+        topleftlayout->addWidget(name);
+        topleftlayout->addWidget(edit);
+        box=new QCheckBox("match case");
+        box1=new QCheckBox("Search backward");
+         leftlayout->addWidget(box);
+         leftlayout->addWidget(box1);
+        search=new QPushButton;
+        close=new QPushButton;
+        search=new QPushButton("Search");
+        close=new QPushButton("Close");
+        rightlayout->addWidget(close);
+        rightlayout->addWidget(search);
+        rightlayout->addStretch(40);
+
+}
+};
+```
+```cpp
+ int main(int argc, char *argv[])
+    {
+        QApplication a(argc, argv);
+
+    auto *p=new window();
+
+        p->show();
+
+        return a.exec();
+    }
+```
 ### <span style="color:blue">3-Bug report Form</span>   {#Bug_report_Form}
 *Before starting work, we need to know some necessary libraries in order to complete this work:*
 Like,QFormlayout :This sets children widgets in a two-column form with labels in the left column and input fields in the right column.
