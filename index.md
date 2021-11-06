@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
     return a.exec();
 }
 
-```
+
 voila la forme suivante:
 ```
 ![qhboxlayouts](https://user-images.githubusercontent.com/93833171/140616506-8e02ac1b-a25a-459f-94aa-a1cfc69d0337.PNG)
