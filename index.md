@@ -11,11 +11,7 @@ _Qt inclut un ensemble de classes de gestion de disposition qui sont utilisées 
 
 > **Layout** :The Qt layout system provides a simple and powerful way of automatically arranging child widgets within a widget to ensure that they make good use of the available space.
 
-### After using the acquired knowledge, the following models were created.
-
-some \*blue\* text
-4
-<span style="color:blue">some *blue* text</span>
+### \*blue\* After using the acquired knowledge, the following models were created.
 
 * [www.google.com] (Experimenting with QHBOXLayout" )
 *   Nested Layouts
@@ -60,7 +56,7 @@ int main(int argc, char *argv[])
 }
 
 ```
-## voila la forme suivante:
+## voilà la forme suivante:
 
 ![qhboxlayouts](https://user-images.githubusercontent.com/93833171/140616506-8e02ac1b-a25a-459f-94aa-a1cfc69d0337.PNG)
 ```
