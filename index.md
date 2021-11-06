@@ -1,3 +1,4 @@
+<link rel="icon" href="https://i2.wp.com/www.icon0.com/wp-content/uploads/2021/05/stock-photo-tick-icon-sign-design-13148.jpg?fit=400%2C400&ssl=1" />
 # Programming Widget Layout
 
 ## Introduction:
