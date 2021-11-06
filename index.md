@@ -143,7 +143,8 @@ public:
 ```
 here is the following form:
 
-[rrrccc](https://user-images.githubusercontent.com/93833171/140626107-8db98e5d-8a89-4c13-8d82-4b892c48927a.PNG)
+
+![rrrccc](https://user-images.githubusercontent.com/93833171/140626361-48775e84-baad-4433-acaf-769f29afb3d6.PNG)
 
 
 ### <span style="color:blue">3-Bug report Form</span>   {#Bug_report_Form}
