@@ -179,7 +179,8 @@ int main(int argc, char *argv[])
 }
 ```
 <span style="color:black">here is the following form:</span>
-images.githubusercontent.com/93833171/140618132-f2292d38-562f-47dd-9674-ca5744a8f20e.PNG)
+![furmulaire](https://user-images.githubusercontent.com/93833171/140618191-7c602867-109b-4296-b2f5-7b01fea81709.PNG)
+
 Just as widgets can ![furmulaire](https://user-
 contain other widgets, layouts can be used to provide different levels of grouping for widgets. Here, we want to display a label alongside a line edit at the top of a window, above a table view showing the results of a query,Thats what we called **Nested Layout**
 ### Bug report Form
