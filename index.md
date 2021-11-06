@@ -14,12 +14,12 @@ _Qt inclut un ensemble de classes de gestion de disposition qui sont utilisées 
 
 ### <span style="color:orange">After using the acquired knowledge, the following models were created.</span>
 
-* [www.google.com] (Experimenting with QHBOXLayout" )
+* [Nested](#a)
 *   Nested Layouts
 *   Bug report Form
 *   Grid Layout
 
-#### <span style="color:blue">1-Experimenting with QHBOXLayout</span>
+#### <span style="color:blue">1-Experimenting with QHBOXLayout</span> (#a)
 ```cpp
 class mywindow:public QWidget
 {
@@ -183,7 +183,7 @@ int main(int argc, char *argv[])
 ![furmulaire](https://user-images.githubusercontent.com/93833171/140618191-7c602867-109b-4296-b2f5-7b01fea81709.PNG)
 ### <span style="color:blue">4-Grid Layout</span>
 
- ![2021-11-06 18_56_09-CS311 _ Signal and Slots](https://user-images.githubusercontent.com/93819249/140619234-62baf751-ad69-4ea7-937d-14a3e629db99.png)
+
 ```c++
 class window:public QWidget{
 
@@ -221,6 +221,16 @@ gridlayout->addWidget(gridbutton[i],((9-i)/3), (i-1)%3);
 
 ```
 
+```cpp
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+window p;
+p.show();
+    return a.exec();
+}
+```
+ ![2021-11-06 18_56_09-CS311 _ Signal and Slots](https://user-images.githubusercontent.com/93819249/140619234-62baf751-ad69-4ea7-937d-14a3e629db99.png)
 Just as widgets can ![furmulaire](https://user-
 contain other widgets, layouts can be used to provide different levels of grouping for widgets. Here, we want to display a label alongside a line edit at the top of a window, above a table view showing the results of a query,Thats what we called **Nested Layout**
 ### Bug report Form
