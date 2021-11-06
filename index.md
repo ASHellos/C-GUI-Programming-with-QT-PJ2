@@ -20,16 +20,38 @@ _Qt inclut un ensemble de classes de gestion de disposition qui sont utilisées 
 
 ### Experimenting with QHBOXLayout
 
-1.  We will start by using the main function in the data:
+class mywindow:public QWidget
+{
+public:
+     mywindow(QWidget*parents=nullptr):QWidget(parents){
 
-```cpp
-int main(int argc, char* argv[]) { QApplication app(argc, argv);
+   setWindowTitle("QHBoxLayout");
+    name =new QLabel("Name:");
+    name->setStyleSheet("font:bold 15px");
+    line=new QLineEdit;
+    button=new QPushButton("search");
+    button->setStyleSheet("font:bold 15px");
 
-QWidget* window = new QWidget(); window->setWindowTitle("QHBoxLayout Test");
+    auto layout=new QHBoxLayout;
+               setLayout(layout);
+               layout->addWidget(name);
+               layout->addWidget(line);
+               layout->addWidget(button);
+    };
 
-window->show();
+protected:
+    QLabel *name;
+    QLineEdit *line;
+    QPushButton * button;
 
-return app.exec(); }
+};
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    mywindow w;
+    w.show();
+    return a.exec();
+}
 
 ```
 
