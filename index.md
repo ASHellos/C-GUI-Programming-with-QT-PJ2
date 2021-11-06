@@ -329,7 +329,13 @@ p.show();
  ![2021-11-06 18_56_09-CS311 _ Signal and Slots](https://user-images.githubusercontent.com/93819249/140619234-62baf751-ad69-4ea7-937d-14a3e629db99.png)
  
  
-  realized by : SAID EL OUARDI, ADIL ERAAD 
+ 
+ 
+ 
+ 
+ 
+ 
+ ####<span style="color:orange"> realized by : SAID EL OUARDI, ADIL ERAAD</span> 
  
  
  
