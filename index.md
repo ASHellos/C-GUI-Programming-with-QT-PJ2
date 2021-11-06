@@ -2,7 +2,7 @@
 
 # Programming Widget Layout
 
-## <span style="color:red">Introduction:</span>  {#Experimenting with QHBOXLayout}
+## <span style="color:red">Introduction:</span>
 
 _Qt inclut un ensemble de classes de gestion de disposition qui sont utilisées pour décrire comment les widgets sont disposés dans l'interface utilisateur d'une application. Ces dispositions positionnent et redimensionnent automatiquement les widgets lorsque la quantité d'espace disponible pour eux change, garantissant qu'ils sont organisés de manière cohérente et que l'interface utilisateur dans son ensemble reste utilisable._
 
@@ -14,12 +14,12 @@ _Qt inclut un ensemble de classes de gestion de disposition qui sont utilisées 
 
 ### <span style="color:orange">After using the acquired knowledge, the following models were created.</span>
 
-* [Experimenting with QHBOXLayout](#r)
-* [Nested Layouts](#Nested Layouts)
-* [Bug report Form](#Bug report Form)
-* [Grid Layout](#Grid Layout)
+* [Experimenting with QHBOXLayout](#Experimenting_with_QHBOXLayout)
+* [Nested Layouts](#Nested_Layouts)
+* [Bug report Form](#Bug_report_Form)
+* [Grid Layout](#Grid_Layout)
 
-#### <span style="color:blue">1-Experimenting with QHBOXLayout</span>  {#r}
+#### <span style="color:blue">1-Experimenting with QHBOXLayout</span>  {#Experimenting_with_QHBOXLayout}
 ```cpp
 class mywindow:public QWidget
 {
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 
 
 
-### <span style="color:blue">3-Bug report Form</span> {#Bug report Form}
+### <span style="color:blue">3-Bug report Form</span> {#Bug_report_Form}
 ```cpp
 class window:public QWidget{
 
@@ -181,7 +181,7 @@ int main(int argc, char *argv[])
 <span style="color:black">here is the following form:</span>
 
 ![furmulaire](https://user-images.githubusercontent.com/93833171/140618191-7c602867-109b-4296-b2f5-7b01fea81709.PNG)
-### <span style="color:blue">4-Grid Layout</span> {#Grid Layout}
+### <span style="color:blue">4-Grid Layout</span> {#Grid_Layout}
 
 
 ```c++
