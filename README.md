@@ -1,4 +1,4 @@
-# C-GUI-Programming-with-QT-PJ2
+# C-GUI-Programming-with-QT-PJ
 
 organized by :SAID EL OUARDI
               ,ADIL EDAAD
