@@ -19,7 +19,7 @@ _Qt inclut un ensemble de classes de gestion de disposition qui sont utilisées 
 *   Grid Layout
 
 ### Experimenting with QHBOXLayout
-
+```cpp
 class mywindow:public QWidget
 {
 public:
@@ -45,6 +45,8 @@ protected:
     QPushButton * button;
 
 };
+```
+```cpp
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
