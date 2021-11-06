@@ -62,6 +62,111 @@ int main(int argc, char *argv[])
 
 
 ### <span style="color:blue">2-Nested Layouts</span>
+```cpp
+class window:public QWidget{
+
+public:
+    window(QWidget *parents=nullptr):QWidget(parents){// le constructeur
+
+     setWindowTitle("Report Bug");
+
+
+     //QVBoxLayout
+        main_layouts=new QVBoxLayout();
+        setLayout(main_layouts);
+
+
+     formlables_name=new QLabel("Name:",this);
+     formEdits_name=new QLineEdit(this);
+
+     formlables_company=new QLabel("Campany:",this);
+     formEdits_company=new QLineEdit(this);
+
+     formlables_phone=new QLabel("Phone:",this);
+     formEdits_phone=new QLineEdit(this);
+
+     formlables_email=new QLabel("Email:",this);
+     formEdits_email=new QLineEdit(this);
+
+     formlables_problem_title=new QLabel("Problem Title:",this);
+     formEdits_problem_title=new QLineEdit(this);
+
+     formlables_summary=new QLabel("Summary Information:",this);
+     formEdits_summary=new QTextEdit(this);
+
+     lable_reproducibility=new QLabel("Reproducibility:",this);
+     box_rep=new QComboBox();
+     box_rep->addItem("Always");
+       // form layouts
+       formlayouts=new  QFormLayout(this);
+       formlayouts->addRow(formlables_name,formEdits_name);
+       formlayouts->addRow(formlables_company,formEdits_company);
+       formlayouts->addRow(formlables_phone,formEdits_phone);
+       formlayouts->addRow(formlables_email,formEdits_email);
+       formlayouts->addRow(formlables_problem_title,formEdits_problem_title);
+       formlayouts->addRow(formlables_summary,formEdits_summary);
+       formlayouts->addRow(lable_reproducibility,box_rep);
+ main_layouts->addLayout(formlayouts);
+
+
+  //Qhboxlayout
+   row_button1=new QHBoxLayout;
+
+  //pUSHBUTTONBOS
+   reset=new QPushButton("Reset");
+   submet=new QPushButton("Submet Bug Report");
+   Dontsubmit=new QPushButton("D'ont Submet");
+   row_button1->addWidget(reset);
+   row_button1->addSpacerItem(new QSpacerItem(50,10,QSizePolicy::Expanding));
+   row_button1->addWidget(submet);
+   row_button1->addWidget(Dontsubmit);
+
+
+    main_layouts->addLayout(row_button1);
+    }
+
+protected:
+ //QFormlayouts
+ QFormLayout *formlayouts;
+
+ //labels
+ QLabel *formlables_name;
+ QLabel *formlables_company;
+ QLabel *formlables_phone;
+ QLabel *formlables_email;
+ QLabel *formlables_problem_title;
+ QLabel *formlables_summary;
+ QLabel *lable_reproducibility;
+  //lineEdits
+ QLineEdit *formEdits_name;
+QLineEdit *formEdits_company;
+QLineEdit *formEdits_phone;
+QLineEdit *formEdits_email;
+QLineEdit *formEdits_problem_title;
+//text edit
+QTextEdit *formEdits_summary;
+//qgroupebox
+QGroupBox *form_groups;
+//QVBoxLayout
+QVBoxLayout *main_layouts;
+//QComboBox
+QComboBox *box_rep;
+//QPushButton
+QPushButton *button1;
+QPushButton *button2;
+QPushButton *button3;
+//QVBoxLayoutt
+QVBoxLayout *mainlayouts;
+//QhBoxLayout
+QHBoxLayout *row_button1;
+//QPushbutton
+QPushButton *reset;
+QPushButton *submet;
+QPushButton *Dontsubmit;
+};
+
+
+```
 Just as widgets can contain other widgets, layouts can be used to provide different levels of grouping for widgets. Here, we want to display a label alongside a line edit at the top of a window, above a table view showing the results of a query,Thats what we called **Nested Layout**
 ### Bug report Form
 we need befaure using them to knew whats is the diffre
