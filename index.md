@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 
 
 
-### <span style="color:blue">3-Bug report Form</span> {#Bug_report_Form}
+### <span style="color:blue">3-Bug report Form</span>   {#Bug_report_Form}
 ```cpp
 class window:public QWidget{
 
