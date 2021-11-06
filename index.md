@@ -2,7 +2,7 @@
 
 # Programming Widget Layout
 
-## <span style="color:red">Introduction:</span>
+## <span style="color:red">Introduction:</span>  {#Experimenting with QHBOXLayout}
 
 _Qt inclut un ensemble de classes de gestion de disposition qui sont utilisées pour décrire comment les widgets sont disposés dans l'interface utilisateur d'une application. Ces dispositions positionnent et redimensionnent automatiquement les widgets lorsque la quantité d'espace disponible pour eux change, garantissant qu'ils sont organisés de manière cohérente et que l'interface utilisateur dans son ensemble reste utilisable._
 
@@ -19,7 +19,7 @@ _Qt inclut un ensemble de classes de gestion de disposition qui sont utilisées 
 * [Bug report Form](#Bug report Form)
 * [Grid Layout](#Grid Layout)
 
-#### <span style="color:blue">1-Experimenting with QHBOXLayout</span> {#Experimenting with QHBOXLayout}
+#### <span style="color:blue">1-Experimenting with QHBOXLayout</span>
 ```cpp
 class mywindow:public QWidget
 {
