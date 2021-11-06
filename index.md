@@ -1,7 +1,7 @@
 
 # Programming Widget Layoutjj
 
-## Introduction:
+## <span style="color:red">Introduction</span>:
 
 _Qt inclut un ensemble de classes de gestion de disposition qui sont utilisées pour décrire comment les widgets sont disposés dans l'interface utilisateur d'une application. Ces dispositions positionnent et redimensionnent automatiquement les widgets lorsque la quantité d'espace disponible pour eux change, garantissant qu'ils sont organisés de manière cohérente et que l'interface utilisateur dans son ensemble reste utilisable._
 
@@ -11,8 +11,8 @@ _Qt inclut un ensemble de classes de gestion de disposition qui sont utilisées 
 
 > **Layout** :The Qt layout system provides a simple and powerful way of automatically arranging child widgets within a widget to ensure that they make good use of the available space.
 
-### After using the acquired knowledge, the following models were created:
-some \*blue\* text
+### \*blue\* After using the acquired knowledge, the following models were created.
+
 * [www.google.com] (Experimenting with QHBOXLayout" )
 *   Nested Layouts
 *   Bug report Form
