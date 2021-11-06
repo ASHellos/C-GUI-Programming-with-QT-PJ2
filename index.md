@@ -1,5 +1,8 @@
-<title> dsqd</title>
-
+<html>
+     <head>
+     <title> dsqd</title>
+          </head>
+</html>
 <ico rel="icon" href="https://i2.wp.com/www.icon0.com/wp-content/uploads/2021/05/stock-photo-tick-icon-sign-design-13148.jpg?fit=400%2C400&ssl=1" />
 # Programming Widget Layoutj
 
@@ -61,7 +64,7 @@ int main(int argc, char *argv[])
 ## voila la forme suivante:
 
 ![qhboxlayouts](https://user-images.githubusercontent.com/93833171/140616506-8e02ac1b-a25a-459f-94aa-a1cfc69d0337.PNG)
-
+```
 
 ### Nested Layouts
 Just as widgets can contain other widgets, layouts can be used to provide different levels of grouping for widgets. Here, we want to display a label alongside a line edit at the top of a window, above a table view showing the results of a query,Thats what we called **Nested Layout**
