@@ -141,6 +141,11 @@ public:
         return a.exec();
     }
 ```
+e="color:black">here is the following form:</span>
+
+<span styl![rrrccc](https://user-images.githubusercontent.com/93833171/140626107-8db98e5d-8a89-4c13-8d82-4b892c48927a.PNG)
+
+
 ### <span style="color:blue">3-Bug report Form</span>   {#Bug_report_Form}
 *Before starting work, we need to know some necessary libraries in order to complete this work:*
 Like,QFormlayout :This sets children widgets in a two-column form with labels in the left column and input fields in the right column.
