@@ -17,7 +17,7 @@ _Qt includes a set of layout management classes that are used to describe how wi
 <details>
 <summary>Summary</summary>
 <ul>
-<li> markdown list 1</li>
+* <li> [Experimenting with QHBOXLayout](#Experimenting_with_QHBOXLayout)</li>
 <ul>
 <li> nested list 1</li>
 <li> nested list 2</li>
@@ -25,6 +25,9 @@ _Qt includes a set of layout management classes that are used to describe how wi
 <li> markdown list 2</li>
 </ul>
 </details>
+
+
+
 
 * [Experimenting with QHBOXLayout](#Experimenting_with_QHBOXLayout)
 * [Nested Layouts](#Nested_Layouts)
