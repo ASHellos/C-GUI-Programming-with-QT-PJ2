@@ -14,15 +14,7 @@ _Qt includes a set of layout management classes that are used to describe how wi
 
 ### <span style="color:orange">After using the acquired knowledge, the following models were created.</span>
 
-<details>
-<summary>Summary</summary>
-     
-[Experimenting with QHBOXLayout](#Experimenting_with_QHBOXLayout)
-
-</details>
-
-
-
+**Summary**
 
 * [Experimenting with QHBOXLayout](#Experimenting_with_QHBOXLayout)
 * [Nested Layouts](#Nested_Layouts)
