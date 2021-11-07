@@ -1,8 +1,10 @@
+![zzz](https://user-images.githubusercontent.com/93819249/140656971-73999986-75c3-41c0-b0ef-5b2995bc6f50.jpg)
+
 # Programming Widget Layout                                                                                                                    
 
 ## <span style="color:red">Introduction:</span>
 
-_Qt inclut un ensemble de classes de gestion de disposition qui sont utilisées pour décrire comment les widgets sont disposés dans l'interface utilisateur d'une application. Ces dispositions positionnent et redimensionnent automatiquement les widgets lorsque la quantité d'espace disponible pour eux change, garantissant qu'ils sont organisés de manière cohérente et que l'interface utilisateur dans son ensemble reste utilisable._
+_Qt includes a set of layout management classes that are used to describe how widgets are laid out in an application's user interface. These layouts automatically position and resize widgets as the amount of space available for them changes, ensuring they are organized consistently and the user interface as a whole remains usable._
 
 > **widget** : Widgets are the primary elements for creating user interfaces in Qt. Widgets can display data and status information, receive user input, and provide a container for other widgets that should be grouped together. A widget that is not embedded in a parent widget is called a window.
 
@@ -12,12 +14,27 @@ _Qt inclut un ensemble de classes de gestion de disposition qui sont utilisées 
 
 ### <span style="color:orange">After using the acquired knowledge, the following models were created.</span>
 
+**Summary**
+
 * [Experimenting with QHBOXLayout](#Experimenting_with_QHBOXLayout)
 * [Nested Layouts](#Nested_Layouts)
 * [Bug report Form](#Bug_report_Form)
 * [Grid Layout](#Grid_Layout)
 
 #### <span style="color:blue">1-Experimenting with QHBOXLayout</span>  {#Experimenting_with_QHBOXLayout}
+
+<details open>
+<summary style="color:black">Used Components:</summary>
+<ul>
+<li> QLabel</li>
+<li> QlineEdit</li>
+<li> QPushButton</li>
+<li> QHBoxLayout</li>
+<li> QWidget</li>
+<li> QApplication</li>
+</ul>
+</details>
+
 ```cpp
 class mywindow:public QWidget
 {
@@ -58,25 +75,32 @@ int main(int argc, char *argv[])
  <span style="color:black">here is the following form:</span>
 
 ![qhboxlayouts](https://user-images.githubusercontent.com/93833171/140616506-8e02ac1b-a25a-459f-94aa-a1cfc69d0337.PNG)
-### <span style="color:blue">2-Nested Layouts</span>  {#Nested_Layouts}
-```cpp
-#include "mainwindow.h"
 
-#include <QApplication>
-#include<QWidget>
-#include<QLabel>
-#include<QLineEdit>
-#include<QPushButton>
-#include<QCheckBox>
-#include<QHBoxLayout>
-#include<QVBoxLayout>
-#include<QGridLayout>
-#include<QGroupBox>
-#include<QLCDNumber>
-#include<QColor>
-#include<QLabel>
-#include<QLineEdit>
-#include<QSpacerItem>
+***
+
+### <span style="color:blue">2-Nested Layouts</span>  {#Nested_Layouts}
+
+
+<details open>
+<summary style="color:black">Used Components:</summary>
+<ul>
+<li> QLabel</li>
+<li> QlineEdit</li>
+<li> QPushButton</li>
+<li> QChechBox</li>
+<li> QVBoxLayout</li>
+<li> QHBoxLayout</li>
+<li> QWidget</li>
+<li> QApplication</li>
+<li> Stretch</li>
+     
+</ul>
+</details>
+
+
+
+
+```cpp
 
 
 class window:public QWidget{
@@ -144,10 +168,28 @@ here is the following form:
 
 ![imagges](https://user-images.githubusercontent.com/93833171/140626490-565e104b-ed09-44e1-8f9c-9aa8248a3bb3.PNG)
 
+***
 
 ### <span style="color:blue">3-Bug report Form</span>   {#Bug_report_Form}
 *Before starting work, we need to know some necessary libraries in order to complete this work:*
 Like,QFormlayout :This sets children widgets in a two-column form with labels in the left column and input fields in the right column.
+
+<details open>
+<summary style="color:black">Used Components:</summary>
+<ul>
+<li> QLabel</li>
+<li> QlineEdit</li>
+<li> QPushButton</li>
+<li> QTextEdit</li>
+<li> QVBoxLayout</li>
+<li> QHBoxLayout</li>
+<li> QFormLayout</li>
+<li> QGroupBox</li>
+<li> QComboBox</li>
+<li> QWidget</li>
+<li> QApplication</li>
+</ul>
+</details>
 
 ```cpp
 class window:public QWidget{
@@ -266,11 +308,30 @@ int main(int argc, char *argv[])
 <span style="color:black">here is the following form:</span>
 
 ![furmulaire](https://user-images.githubusercontent.com/93833171/140618191-7c602867-109b-4296-b2f5-7b01fea81709.PNG)
+
+***
+
 ### <span style="color:blue">4-Grid Layout</span> {#Grid_Layout}
 
  **QGridLayout** lays out widgets in cells by dividing the available space into rows and columns.
  QGridLayout takes the space made available to it (by its parent layout or by the parentWidget()), divides it up into rows and columns, and puts each widget it manages into the correct cell. 
  If the GridLayout is resized, all items in the layout will be rearranged. It is similar to the widget-based QGridLayout. All visible children of the GridLayout element will belong to the layout.
+ 
+ 
+ <details open>
+<summary style="color:black">Used Components:</summary>
+<ul>
+
+<li> QPushButton</li>
+<li> QLCDNumber</li>
+<li> QVBoxLayout</li>
+<li> QGridLayout</li>
+<li> QWidget</li>
+<li> QApplication</li>
+
+</ul>
+</details>
+ 
 
 ```c++
 class window:public QWidget{
@@ -280,7 +341,6 @@ protected:
     QVBoxLayout *mainlayout;
     QGridLayout *gridlayout;
     QPushButton* gridbutton[10]  //for the number of pushbutton;
-    QGroupBox* gridgroup;
     QLCDNumber* qlcd;
     QPushButton* enter;
 
@@ -327,13 +387,15 @@ p.show();
  
  ![2021-11-06 18_56_09-CS311 _ Signal and Slots](https://user-images.githubusercontent.com/93819249/140619234-62baf751-ad69-4ea7-937d-14a3e629db99.png)
  
+ ****
  
- 
- 
+## <span style="color:red">Conclusion : </span> 
+*Although I finished this practical exercise completely, I discovered many new things other than what was studied in the previous lessons in this programming language with the discovery of new ways to use regular functions with a question about the possible limits using these functions and what I can do with them And what might be added to it to get a more professional look.*
+
+****
+
  <span style="color:orange"> realized by : SAID EL OUARDI, ADIL ERAAD</span> 
  
  
  
  
-> Someone did really his homework. Really well done! Pefect grade
-> Since you used **githubpages** you should share the following link `https://ashellos.github.io/C-GUI-Programming-with-QT-PJ2/`
