@@ -32,6 +32,7 @@ _Qt includes a set of layout management classes that are used to describe how wi
 </ul>
 </details>
 
+
 ```cpp
 class mywindow:public QWidget
 {
@@ -76,24 +77,25 @@ int main(int argc, char *argv[])
 ***
 
 ### <span style="color:blue">2-Nested Layouts</span>  {#Nested_Layouts}
-```cpp
-#include "mainwindow.h"
 
-#include <QApplication>
-#include<QWidget>
-#include<QLabel>
-#include<QLineEdit>
-#include<QPushButton>
-#include<QCheckBox>
-#include<QHBoxLayout>
-#include<QVBoxLayout>
-#include<QGridLayout>
-#include<QGroupBox>
-#include<QLCDNumber>
-#include<QColor>
-#include<QLabel>
-#include<QLineEdit>
-#include<QSpacerItem>
+
+<details>
+<summary>Used Components:</summary>
+<ul>
+<li> QLabel</li>
+<li> QlineEdit</li>
+<li> QPushButton</li>
+<li> QChechBox</li>
+<li> QVBoxLayout</li>
+<li> QHBoxLayout</li>
+<li> Stretch</li>
+</ul>
+</details>
+
+
+
+
+```cpp
 
 
 class window:public QWidget{
@@ -166,6 +168,20 @@ here is the following form:
 ### <span style="color:blue">3-Bug report Form</span>   {#Bug_report_Form}
 *Before starting work, we need to know some necessary libraries in order to complete this work:*
 Like,QFormlayout :This sets children widgets in a two-column form with labels in the left column and input fields in the right column.
+
+<details>
+<summary>Used Components:</summary>
+<ul>
+<li> QLabel</li>
+<li> QlineEdit</li>
+<li> QPushButton</li>
+<li> QTextEdit</li>
+<li> QVBoxLayout</li>
+<li> QHBoxLayout</li>
+<li> QTextEdit</li>
+<li> QTextEdit</li>
+</ul>
+</details>
 
 ```cpp
 class window:public QWidget{
@@ -292,6 +308,20 @@ int main(int argc, char *argv[])
  **QGridLayout** lays out widgets in cells by dividing the available space into rows and columns.
  QGridLayout takes the space made available to it (by its parent layout or by the parentWidget()), divides it up into rows and columns, and puts each widget it manages into the correct cell. 
  If the GridLayout is resized, all items in the layout will be rearranged. It is similar to the widget-based QGridLayout. All visible children of the GridLayout element will belong to the layout.
+ 
+ 
+ <details>
+<summary>Used Components:</summary>
+<ul>
+
+<li> QPushButton</li>
+<li> QLCDNumber</li>
+<li> QVBoxLayout</li>
+<li> QGridLayout</li>
+
+</ul>
+</details>
+ 
 
 ```c++
 class window:public QWidget{
@@ -301,7 +331,6 @@ protected:
     QVBoxLayout *mainlayout;
     QGridLayout *gridlayout;
     QPushButton* gridbutton[10]  //for the number of pushbutton;
-    QGroupBox* gridgroup;
     QLCDNumber* qlcd;
     QPushButton* enter;
 
