@@ -30,6 +30,8 @@ _Qt includes a set of layout management classes that are used to describe how wi
 <li> QlineEdit</li>
 <li> QPushButton</li>
 <li> QHBoxLayout</li>
+<li> QWidget</li>
+<li> QApplication</li>
 </ul>
 </details>
 
@@ -88,7 +90,10 @@ int main(int argc, char *argv[])
 <li> QChechBox</li>
 <li> QVBoxLayout</li>
 <li> QHBoxLayout</li>
+<li> QWidget</li>
+<li> QApplication</li>
 <li> Stretch</li>
+     
 </ul>
 </details>
 
@@ -181,6 +186,8 @@ Like,QFormlayout :This sets children widgets in a two-column form with labels in
 <li> QFormLayout</li>
 <li> QGroupBox</li>
 <li> QComboBox</li>
+<li> QWidget</li>
+<li> QApplication</li>
 </ul>
 </details>
 
@@ -319,6 +326,8 @@ int main(int argc, char *argv[])
 <li> QLCDNumber</li>
 <li> QVBoxLayout</li>
 <li> QGridLayout</li>
+<li> QWidget</li>
+<li> QApplication</li>
 
 </ul>
 </details>
