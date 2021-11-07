@@ -31,7 +31,6 @@ _Qt includes a set of layout management classes that are used to describe how wi
 <li> QPushButton</li>
 </ul>
 </details>
-</span>
 
 ```cpp
 class mywindow:public QWidget
