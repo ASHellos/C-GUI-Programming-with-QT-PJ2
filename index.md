@@ -22,9 +22,9 @@ _Qt includes a set of layout management classes that are used to describe how wi
 * [Grid Layout](#Grid_Layout)
 
 #### <span style="color:blue">1-Experimenting with QHBOXLayout</span>  {#Experimenting_with_QHBOXLayout}
-<span style="color:red">
+
 <details open>
-<summary style="color:blue">used Components:</summary>
+<summary style="color:black">Used Components:</summary>
 <ul>
 <li> QLabel</li>
 <li> QlineEdit</li>
@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
 
 
 <details open>
-<summary>Used Components:</summary>
+<summary style="color:black">Used Components:</summary>
 <ul>
 <li> QLabel</li>
 <li> QlineEdit</li>
@@ -170,7 +170,7 @@ here is the following form:
 Like,QFormlayout :This sets children widgets in a two-column form with labels in the left column and input fields in the right column.
 
 <details open>
-<summary>Used Components:</summary>
+<summary style="color:black">Used Components:</summary>
 <ul>
 <li> QLabel</li>
 <li> QlineEdit</li>
@@ -311,7 +311,7 @@ int main(int argc, char *argv[])
  
  
  <details open>
-<summary>Used Components:</summary>
+<summary style="color:black">Used Components:</summary>
 <ul>
 
 <li> QPushButton</li>
