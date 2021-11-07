@@ -62,8 +62,7 @@ int main(int argc, char *argv[])
  <span style="color:black">here is the following form:</span>
 
 ![qhboxlayouts](https://user-images.githubusercontent.com/93833171/140616506-8e02ac1b-a25a-459f-94aa-a1cfc69d0337.PNG)
-
----------
+***
 ### <span style="color:blue">2-Nested Layouts</span>  {#Nested_Layouts}
 ```cpp
 #include "mainwindow.h"
@@ -149,9 +148,7 @@ public:
 here is the following form:
 
 ![imagges](https://user-images.githubusercontent.com/93833171/140626490-565e104b-ed09-44e1-8f9c-9aa8248a3bb3.PNG)
-
-
----------
+***
 ### <span style="color:blue">3-Bug report Form</span>   {#Bug_report_Form}
 *Before starting work, we need to know some necessary libraries in order to complete this work:*
 Like,QFormlayout :This sets children widgets in a two-column form with labels in the left column and input fields in the right column.
@@ -273,9 +270,7 @@ int main(int argc, char *argv[])
 <span style="color:black">here is the following form:</span>
 
 ![furmulaire](https://user-images.githubusercontent.com/93833171/140618191-7c602867-109b-4296-b2f5-7b01fea81709.PNG)
-
-
----------
+***
 ### <span style="color:blue">4-Grid Layout</span> {#Grid_Layout}
 
  **QGridLayout** lays out widgets in cells by dividing the available space into rows and columns.
@@ -336,9 +331,7 @@ p.show();
  <span style="color:black">here is the following form:</span>
  
  ![2021-11-06 18_56_09-CS311 _ Signal and Slots](https://user-images.githubusercontent.com/93819249/140619234-62baf751-ad69-4ea7-937d-14a3e629db99.png)
- 
- 
- 
+ ***
 ## <span style="color:red">Conclusion : </span> 
 *Although I finished this practical exercise completely, I discovered many new things other than what was studied in the previous lessons in this programming language with the discovery of new ways to use regular functions with a question about the possible limits using these functions and what I can do with them And what might be added to it to get a more professional look.*
 
