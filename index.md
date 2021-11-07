@@ -178,8 +178,9 @@ Like,QFormlayout :This sets children widgets in a two-column form with labels in
 <li> QTextEdit</li>
 <li> QVBoxLayout</li>
 <li> QHBoxLayout</li>
-<li> QTextEdit</li>
-<li> QTextEdit</li>
+<li> QFormLayout</li>
+<li> QGroupBox</li>
+<li> QComboBox</li>
 </ul>
 </details>
 
