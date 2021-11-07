@@ -23,9 +23,8 @@ _Qt includes a set of layout management classes that are used to describe how wi
 
 #### <span style="color:blue">1-Experimenting with QHBOXLayout</span>  {#Experimenting_with_QHBOXLayout}
 
-###### used Components:
 #### <details>
-#### <summary>used Components</summary>
+<summary>used Components:</summary>
 <ul>
 <li> QLabel</li>
 <li> QlineEdit</li>
