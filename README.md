@@ -335,3 +335,5 @@ p.show();
  
  
  
+> Someone did really his homework. Really well done! Pefect grade
+> Since you used **githubpages** you should share the following link `https://ashellos.github.io/C-GUI-Programming-with-QT-PJ2/`
