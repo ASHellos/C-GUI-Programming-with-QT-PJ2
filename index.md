@@ -23,7 +23,7 @@ _Qt includes a set of layout management classes that are used to describe how wi
 
 #### <span style="color:blue">1-Experimenting with QHBOXLayout</span>  {#Experimenting_with_QHBOXLayout}
 
-<details>
+<details open>
 <summary>used Components:</summary>
 <ul>
 <li> QLabel</li>
@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
 ### <span style="color:blue">2-Nested Layouts</span>  {#Nested_Layouts}
 
 
-<details>
+<details open>
 <summary>Used Components:</summary>
 <ul>
 <li> QLabel</li>
@@ -169,7 +169,7 @@ here is the following form:
 *Before starting work, we need to know some necessary libraries in order to complete this work:*
 Like,QFormlayout :This sets children widgets in a two-column form with labels in the left column and input fields in the right column.
 
-<details>
+<details open>
 <summary>Used Components:</summary>
 <ul>
 <li> QLabel</li>
@@ -310,7 +310,7 @@ int main(int argc, char *argv[])
  If the GridLayout is resized, all items in the layout will be rearranged. It is similar to the widget-based QGridLayout. All visible children of the GridLayout element will belong to the layout.
  
  
- <details>
+ <details open>
 <summary>Used Components:</summary>
 <ul>
 
