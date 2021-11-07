@@ -29,6 +29,7 @@ _Qt includes a set of layout management classes that are used to describe how wi
 <li> QLabel</li>
 <li> QlineEdit</li>
 <li> QPushButton</li>
+<li> QHBoxLayout</li>
 </ul>
 </details>
 
