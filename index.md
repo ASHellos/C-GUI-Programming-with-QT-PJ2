@@ -22,7 +22,7 @@ _Qt includes a set of layout management classes that are used to describe how wi
 * [Grid Layout](#Grid_Layout)
 
 #### <span style="color:blue">1-Experimenting with QHBOXLayout</span>  {#Experimenting_with_QHBOXLayout}
-
+<span style="color:red">
 <details open>
 <summary style="color:blue">used Components:</summary>
 <ul>
@@ -31,7 +31,7 @@ _Qt includes a set of layout management classes that are used to describe how wi
 <li> QPushButton</li>
 </ul>
 </details>
-
+</span>
 
 ```cpp
 class mywindow:public QWidget
