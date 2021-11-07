@@ -331,7 +331,8 @@ p.show();
  
  
  
- 
+ ## <span style="color:red"> Conclusion : </span> 
+*Although I finished this practical exercise completely, I discovered many new things other than what was studied in the previous lessons in this programming language with the discovery of new ways to use regular functions with a question about the possible limits using these functions and what I can do with them And what might be added to it to get a more professional look*
  <span style="color:orange"> realized by : SAID EL OUARDI, ADIL ERAAD</span> 
  
  
