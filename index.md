@@ -4,7 +4,7 @@
 
 
 
-**[The Second Part of the work](./Another-page.html)**
+**[The Second Part of the work](./another-page.html)**
 
 ## <span style="color:red">Introduction:</span>
 
