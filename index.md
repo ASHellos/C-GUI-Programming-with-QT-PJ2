@@ -3,9 +3,8 @@
 # Programming Widget Layout     
 
 
-_yay_
 
-[back](./)
+[The Second Part of the work](./Another-page.html)
 
 ## <span style="color:red">Introduction:</span>
 
