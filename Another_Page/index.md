@@ -1,5 +1,5 @@
 
-## Welcome to another page
+## Welcome to another pahge
 
 _yay_
 memo
