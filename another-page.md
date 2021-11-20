@@ -14,5 +14,5 @@
             
              > example:le slot quit()de la classe QApplicationprovoque l'arrêt du programme.
 
-     
+and at the end we will use the **QTimer** to simulate a traffic light .     
       
