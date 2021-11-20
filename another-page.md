@@ -8,10 +8,10 @@
 
   in this second part follows up to add interactive functionality to the calculator widgets written in the previous homework. The goal is to use **Signals** and **Slots** to simulate a basic calculator behavior. The supported operations are *, +, -, /.
 
-> **Signal** : this is a message sent by a widget when an event occurs.
+> **Signal** : this is a message sent by a widget when an event occurs. >
             
               example: we clicked on a button.
-> **Slot** : this is the function that is called when an event has occurred. It is said that the signal calls the slot. Concretely, a slot is a method of a class.
+> **Slot** : this is the function that is called when an event has occurred. It is said that the signal calls the slot. Concretely, a slot is a method of a class. >
             
               example:The quit() slot of the QApplication class invokes the termination of the program.
 
