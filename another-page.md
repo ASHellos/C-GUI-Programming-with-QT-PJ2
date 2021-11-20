@@ -20,8 +20,10 @@ and at the end we will use the **QTimer** to simulate a traffic light .
 
  * * *
  * * *
+* * *
 # <span style="color:red"> Summary:</span>
  * <span style="color:green"> Calculator</span>
 
  * <span style="color:green"> Traffic Light</span>
 
+* * *
