@@ -12,4 +12,4 @@
              ex: we clicked on a button.
 > **Slot**:this is the function that is called when an event has occurred. It is said that the signal calls the slot. Concretely, a slot is a method of a class.
             
-             <span style="color:blue"> ex:le slot quit()de la classe QApplicationprovoque l'arrêt du programme.</span>
+             ex:le slot quit()de la classe QApplicationprovoque l'arrêt du programme.
