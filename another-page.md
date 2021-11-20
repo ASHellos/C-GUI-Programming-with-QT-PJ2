@@ -17,6 +17,7 @@
 
 and at the end we will use the **QTimer** to simulate a traffic light .     
       
-> **QTimer** : QTimer can also be used to request the execution of a function as soon as the event loop has processed all other pending events.
+
  * * *
  * * *
+# Summary
