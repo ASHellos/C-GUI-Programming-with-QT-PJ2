@@ -12,6 +12,8 @@
             
               example: we clicked on a button.
               
+              
+              
 > **Slot** : this is the function that is called when an event has occurred. It is said that the signal calls the slot. Concretely, a slot is a method of a class. 
             
               example:The quit() slot of the QApplication class invokes the termination of the program.
@@ -22,8 +24,8 @@ and at the end we will use the **QTimer** to simulate a traffic light .
  * * *
  * * *
 # Summary:
-* <span style="color:blue">Calculator</span>
-* <span style="color:blue">Traffic Light</span>
+ <span style="color:blue">* Calculator</span>
+* <span style="color:blue">* Traffic Light</span>
 
  
  * * *
