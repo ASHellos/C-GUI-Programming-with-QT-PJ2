@@ -11,6 +11,7 @@
 > **Signal** : this is a message sent by a widget when an event occurs. 
             
               example: we clicked on a button.
+              
 > **Slot** : this is the function that is called when an event has occurred. It is said that the signal calls the slot. Concretely, a slot is a method of a class. 
             
               example:The quit() slot of the QApplication class invokes the termination of the program.
