@@ -21,4 +21,5 @@ and at the end we will use the **QTimer** to simulate a traffic light .
  * * *
  * * *
 # Summary:
-* said
+* Calculator
+* Traffic Light
