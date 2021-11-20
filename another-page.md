@@ -14,4 +14,5 @@
             
              ex:le slot quit()de la classe QApplicationprovoque l'arrêt du programme.
 
-     ***
+      * * *
+      
