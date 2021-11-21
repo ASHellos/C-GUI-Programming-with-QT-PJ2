@@ -74,6 +74,15 @@ int main(int argc, char *argv[])
 <span style="color:orange">trafficlight.cpp</span>
 
 ```cpp
+
+#include "trafficlight.h"
+#include <QWidget>
+#include <QLayout>
+#include <QRadioButton>
+#include <QTime>
+#include <QApplication>
+
+
 TrafficLight::TrafficLight(QWidget * parent): QWidget(parent){
     //Creatign the widgets
     createWidgets();
