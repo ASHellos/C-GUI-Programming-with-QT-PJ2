@@ -27,4 +27,18 @@ and at the end we will use the **QTimer** to simulate a traffic light .
  * <span style="color:green"> Traffic Light</span>
 
 * * *
-Now we'll start by: **calculator**
+```cpp
+#include "calculator.h"
+
+#include <QApplication>
+
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    Calculator w;
+    w.setWindowTitle("Calculator");
+    w.resize(500,500);
+    w.show();
+    return a.exec();
+}
+```
