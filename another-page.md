@@ -45,189 +45,11 @@ int main(int argc, char *argv[])
     return a.exec();
 }
 ```
-* *  *
-here **Traffic Light**
 
-<span style="color:orange">main.cpp</span>
-
-```cpp
-#include <QApplication>
-#include "trafficlight.h"
-
-int main(int argc, char *argv[])
-{
-    QApplication a(argc, argv);
-
-
-    //Creating the traffic light
-    auto light = new TrafficLight;
-
-
-    //showing the trafic light
-    light->show();
-
-    return a.exec();
-}
-
-```
-
-<span style="color:orange">trafficlight.cpp</span>
-
-```cpp
-
-#include "trafficlight.h"
-#include <QWidget>
-#include <QLayout>
-#include <QRadioButton>
-#include <QTime>
-#include <QApplication>
-
-
-TrafficLight::TrafficLight(QWidget * parent): QWidget(parent){
-    //Creatign the widgets
-    createWidgets();
-    //place Widgets
-    placeWidgets();
-}
-
-//our createwidgets() function
-void TrafficLight::createWidgets()
-{
-  QTime currentTime = QTime::currentTime();
-
-  redlight = new QRadioButton;
-
-  //this for the red color
-  redlight->setEnabled(false);
-  redlight->toggle();
-  //redlight->isChecked();
-  redlight->setStyleSheet("QRadioButton::indicator:checked { background-color: red;}");
-
-  //this for the yellow color
-  yellowlight = new QRadioButton;
-  yellowlight->setEnabled(false);
-  //yellowlight->toggle();
-  yellowlight->setStyleSheet("QRadioButton::indicator:checked { background-color: yellow;}");
-
-  //this for the green color
-  greenlight = new QRadioButton;
-  greenlight->setEnabled(false);
-  //greenlight->toggle();
-  greenlight->setStyleSheet("QRadioButton::indicator:checked { background-color: green;}");
-
-  //here we add each element of the colors at the end ofQradiobutton
-  lights.append(redlight);
-  lights.append(yellowlight);
-  lights.append(greenlight);
-
-  index = 0;
-  //here you want to change the value that exists between startTimer for example : startTimer(500)
-  //starting the timer with an interval in milliseconds
-  startTimer(200);
-}
-
-//our placeWidgets() function
-void TrafficLight::placeWidgets()
-{
-
-  // Placing the widgets
-
-  auto layout = new QVBoxLayout;//our QVboxlayout
-  layout->addWidget(redlight);//we added redlight to layout
-  layout->addWidget(yellowlight);//we added yellowight to layout
-  layout->addWidget(greenlight);//we added greenlightto layout
-  setLayout(layout);
-}
-
-void TrafficLight::timerEvent(QTimerEvent *e)
-{
-
-index = (index + 1)%3;
-lights[index]->toggle();
-    currentTime++;
-    //if the yellow-light is on(checked) and pass his 4 second  active the redlight and initiate the currenttime 0
-
-    if(redlight->isChecked()&& currentTime==4){
-        yellowlight->toggle();
-    currentTime=0;
-    }
-    //same thing for the yellow color
-    if(yellowlight->isChecked()&& currentTime==3){
-        greenlight->toggle();
-    currentTime=0;
-    }
-    //same thing for the green color
-    if(greenlight->isChecked()&& currentTime==1){
-        redlight->toggle();
-    currentTime=0;
-    }
-}
-
-//our keyPressEvent() function
-void TrafficLight::keyPressEvent(QKeyEvent *e){
-
-//    if(e->key()==Qt::Key_Escape)
-//        qApp->exit;
-//    if(e->key()==Qt::Key_R)
-//        index=0;
-//    lights[index]->toggle();
-//    if(e->key()==Qt::Key_G)
-//        index=1;
-//    lights[index]->toggle();
-//    if(e->key()==Qt::Key_Y)
-//        index=2;
-//    lights[index]->toggle();
-
-}
-```
-<span style="color:orange">trafficlight.h</span>
-```h
-#ifndef TRAFFIC_LIGHT_H
-#define TRAFFIC_LIGHT_H
-
-#include <QWidget>
-#include <QLabel>
-#include <QTime>
-#include <QVector>
-#include<QKeyEvent>
-
-class QRadioButton;
-
-class TrafficLight: public QWidget{
-  Q_OBJECT
-
-public:
-
-  TrafficLight(QWidget * parent = nullptr);
-  void timerEvent(QTimerEvent *e);
-  void keyPressEvent(QKeyEvent *e);
-
-protected:
-     void createWidgets();
-     void placeWidgets();
-
-private:
-     //our Qradiobutton
-  QRadioButton * redlight;
-  QRadioButton * yellowlight;
-  QRadioButton * greenlight;
-  //our qlable
-  QLabel * timeLabel;
-  //our vector of QRadioButton
-  QVector <QRadioButton*> lights;
-  int index ;
-  int times[3]{4,1,2};
-  int currentTime;
-
-};
-
-
-#endif
-```
-
-***
 
 ## Calculator
+
+### <span style="color:orange">Calculator.cpp</span>
 
 ```cpp
 
@@ -599,7 +421,7 @@ void Calculator::newoperator(QKeyEvent *e){
                                           }
 ```
 
-header
+### <span style="color:orange">Calculator.h</span>
 
 
 ```cpp
@@ -666,18 +488,186 @@ QString *trig=nullptr;
 
 ```
 
-```cpp
+* *  *
+here **Traffic Light**
 
-   //main
-   int main(int argc, char *argv[])
+<span style="color:orange">main.cpp</span>
+
+```cpp
+#include <QApplication>
+#include "trafficlight.h"
+
+int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Calculator w;
-    w.setWindowTitle("Calculator");
-    w.resize(500,500);
-    w.show();
+
+
+    //Creating the traffic light
+    auto light = new TrafficLight;
+
+
+    //showing the trafic light
+    light->show();
+
     return a.exec();
 }
 
 ```
-   
+
+<span style="color:orange">trafficlight.cpp</span>
+
+```cpp
+
+#include "trafficlight.h"
+#include <QWidget>
+#include <QLayout>
+#include <QRadioButton>
+#include <QTime>
+#include <QApplication>
+
+
+TrafficLight::TrafficLight(QWidget * parent): QWidget(parent){
+    //Creatign the widgets
+    createWidgets();
+    //place Widgets
+    placeWidgets();
+}
+
+//our createwidgets() function
+void TrafficLight::createWidgets()
+{
+  QTime currentTime = QTime::currentTime();
+
+  redlight = new QRadioButton;
+
+  //this for the red color
+  redlight->setEnabled(false);
+  redlight->toggle();
+  //redlight->isChecked();
+  redlight->setStyleSheet("QRadioButton::indicator:checked { background-color: red;}");
+
+  //this for the yellow color
+  yellowlight = new QRadioButton;
+  yellowlight->setEnabled(false);
+  //yellowlight->toggle();
+  yellowlight->setStyleSheet("QRadioButton::indicator:checked { background-color: yellow;}");
+
+  //this for the green color
+  greenlight = new QRadioButton;
+  greenlight->setEnabled(false);
+  //greenlight->toggle();
+  greenlight->setStyleSheet("QRadioButton::indicator:checked { background-color: green;}");
+
+  //here we add each element of the colors at the end ofQradiobutton
+  lights.append(redlight);
+  lights.append(yellowlight);
+  lights.append(greenlight);
+
+  index = 0;
+  //here you want to change the value that exists between startTimer for example : startTimer(500)
+  //starting the timer with an interval in milliseconds
+  startTimer(200);
+}
+
+//our placeWidgets() function
+void TrafficLight::placeWidgets()
+{
+
+  // Placing the widgets
+
+  auto layout = new QVBoxLayout;//our QVboxlayout
+  layout->addWidget(redlight);//we added redlight to layout
+  layout->addWidget(yellowlight);//we added yellowight to layout
+  layout->addWidget(greenlight);//we added greenlightto layout
+  setLayout(layout);
+}
+
+void TrafficLight::timerEvent(QTimerEvent *e)
+{
+
+index = (index + 1)%3;
+lights[index]->toggle();
+    currentTime++;
+    //if the yellow-light is on(checked) and pass his 4 second  active the redlight and initiate the currenttime 0
+
+    if(redlight->isChecked()&& currentTime==4){
+        yellowlight->toggle();
+    currentTime=0;
+    }
+    //same thing for the yellow color
+    if(yellowlight->isChecked()&& currentTime==3){
+        greenlight->toggle();
+    currentTime=0;
+    }
+    //same thing for the green color
+    if(greenlight->isChecked()&& currentTime==1){
+        redlight->toggle();
+    currentTime=0;
+    }
+}
+
+//our keyPressEvent() function
+void TrafficLight::keyPressEvent(QKeyEvent *e){
+
+//    if(e->key()==Qt::Key_Escape)
+//        qApp->exit;
+//    if(e->key()==Qt::Key_R)
+//        index=0;
+//    lights[index]->toggle();
+//    if(e->key()==Qt::Key_G)
+//        index=1;
+//    lights[index]->toggle();
+//    if(e->key()==Qt::Key_Y)
+//        index=2;
+//    lights[index]->toggle();
+
+}
+```
+<span style="color:orange">trafficlight.h</span>
+```h
+#ifndef TRAFFIC_LIGHT_H
+#define TRAFFIC_LIGHT_H
+
+#include <QWidget>
+#include <QLabel>
+#include <QTime>
+#include <QVector>
+#include<QKeyEvent>
+
+class QRadioButton;
+
+class TrafficLight: public QWidget{
+  Q_OBJECT
+
+public:
+
+  TrafficLight(QWidget * parent = nullptr);
+  void timerEvent(QTimerEvent *e);
+  void keyPressEvent(QKeyEvent *e);
+
+protected:
+     void createWidgets();
+     void placeWidgets();
+
+private:
+     //our Qradiobutton
+  QRadioButton * redlight;
+  QRadioButton * yellowlight;
+  QRadioButton * greenlight;
+  //our qlable
+  QLabel * timeLabel;
+  //our vector of QRadioButton
+  QVector <QRadioButton*> lights;
+  int index ;
+  int times[3]{4,1,2};
+  int currentTime;
+
+};
+
+
+#endif
+```
+
+***
+
+
