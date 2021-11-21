@@ -420,7 +420,7 @@ void Calculator::newoperator(QKeyEvent *e){
 public:
     Calculator(QWidget *parent = nullptr);
     ~Calculator();
-
+//using slot for fix the  classical problem which to map multiple signals to the same slot. The slot has to behave differently according the which digit was pressed.
 public slots:
    void newDigit();
    void changeOperation();
@@ -475,6 +475,10 @@ QString *trig=nullptr;
 };
 
 ```
+
+# Result
+![2021-11-21 19_44_18-main cpp @ calculator - Qt Creator](https://user-images.githubusercontent.com/93819249/142775775-8179056d-be6f-4528-9d24-7bcc812acf69.png)
+
 
 * *  *
 # here **Traffic Light**  {#Traffic}
