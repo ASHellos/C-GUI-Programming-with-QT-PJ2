@@ -29,7 +29,7 @@ and at the end we will use the **QTimer** to simulate a traffic light .
 * * *
 Now we'll start wby:**Calculator**
 
-main.cpp
+<span style="color:orange">main.cpp</span>
 ```cpp
 #include "calculator.h"
 
