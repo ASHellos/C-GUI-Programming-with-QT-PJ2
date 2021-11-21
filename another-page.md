@@ -22,9 +22,9 @@ and at the end we will use the **QTimer** to simulate a traffic light .
  * * *
 
 # <span style="color:red"> Summary:</span>
- * <span style="color:green"> Calculator</span>(#Calcul)
+ * Calculator(#Calcul)
 
- * <span style="color:green"> Traffic Light</span>(#Traffic)
+ * Traffic Light(#Traffic)
 
 * * *
 Now we'll start wby:**Calculator** {#Calcul}
