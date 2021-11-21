@@ -27,6 +27,7 @@ and at the end we will use the **QTimer** to simulate a traffic light .
  * <span style="color:green"> Traffic Light</span>
 
 * * *
+Now we'll start wby:Calculator
 main.cpp
 ```cpp
 #include "calculator.h"
