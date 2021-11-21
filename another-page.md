@@ -72,3 +72,102 @@ int main(int argc, char *argv[])
 ```
 
 <span style="color:orange">trafficlight.cpp</span>
+
+```cpp
+TrafficLight::TrafficLight(QWidget * parent): QWidget(parent){
+    //Creatign the widgets
+    createWidgets();
+    //place Widgets
+    placeWidgets();
+}
+
+//our createwidgets() function
+void TrafficLight::createWidgets()
+{
+  QTime currentTime = QTime::currentTime();
+
+  redlight = new QRadioButton;
+
+  //this for the red color
+  redlight->setEnabled(false);
+  redlight->toggle();
+  //redlight->isChecked();
+  redlight->setStyleSheet("QRadioButton::indicator:checked { background-color: red;}");
+
+  //this for the yellow color
+  yellowlight = new QRadioButton;
+  yellowlight->setEnabled(false);
+  //yellowlight->toggle();
+  yellowlight->setStyleSheet("QRadioButton::indicator:checked { background-color: yellow;}");
+
+  //this for the green color
+  greenlight = new QRadioButton;
+  greenlight->setEnabled(false);
+  //greenlight->toggle();
+  greenlight->setStyleSheet("QRadioButton::indicator:checked { background-color: green;}");
+
+  //here we add each element of the colors at the end ofQradiobutton
+  lights.append(redlight);
+  lights.append(yellowlight);
+  lights.append(greenlight);
+
+  index = 0;
+  //here you want to change the value that exists between startTimer for example : startTimer(500)
+  //starting the timer with an interval in milliseconds
+  startTimer(200);
+}
+
+//our placeWidgets() function
+void TrafficLight::placeWidgets()
+{
+
+  // Placing the widgets
+
+  auto layout = new QVBoxLayout;//our QVboxlayout
+  layout->addWidget(redlight);//we added redlight to layout
+  layout->addWidget(yellowlight);//we added yellowight to layout
+  layout->addWidget(greenlight);//we added greenlightto layout
+  setLayout(layout);
+}
+
+void TrafficLight::timerEvent(QTimerEvent *e)
+{
+
+index = (index + 1)%3;
+lights[index]->toggle();
+    currentTime++;
+    //if the yellow-light is on(checked) and pass his 4 second  active the redlight and initiate the currenttime 0
+
+    if(redlight->isChecked()&& currentTime==4){
+        yellowlight->toggle();
+    currentTime=0;
+    }
+    //same thing for the yellow color
+    if(yellowlight->isChecked()&& currentTime==3){
+        greenlight->toggle();
+    currentTime=0;
+    }
+    //same thing for the green color
+    if(greenlight->isChecked()&& currentTime==1){
+        redlight->toggle();
+    currentTime=0;
+    }
+}
+
+//our keyPressEvent() function
+void TrafficLight::keyPressEvent(QKeyEvent *e){
+
+//    if(e->key()==Qt::Key_Escape)
+//        qApp->exit;
+//    if(e->key()==Qt::Key_R)
+//        index=0;
+//    lights[index]->toggle();
+//    if(e->key()==Qt::Key_G)
+//        index=1;
+//    lights[index]->toggle();
+//    if(e->key()==Qt::Key_Y)
+//        index=2;
+//    lights[index]->toggle();
+
+}
+```
