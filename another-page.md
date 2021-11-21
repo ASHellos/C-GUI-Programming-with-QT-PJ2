@@ -28,7 +28,7 @@ and at the end we will use the **QTimer** to simulate a traffic light .
 
 * * *
 # Now we'll start wby:**Calculator**  {#Calcul}
-
+The Calculator class provides a simple calculator widget. It inherits from QDialog and has several private slots associated with the calculator's buttons.
 <span style="color:orange">main.cpp</span>
 ```cpp
 #include "calculator.h"
@@ -85,12 +85,8 @@ void Calculator::createWidgets()
 
     //grid layout
     buttonsLayout = new QGridLayout;
-//setStyleSheet("QPushButton{background-color:Red; border: none; color: white; padding: 16px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; transition-duration: 0.4s; cursor: pointer;");
     setStyleSheet("QPushButton{   background-color: Green;  color: white; padding: 15px 32px;  font-size: 20px;  }");
-
-
-
-    //creating the buttons
+    //creating the buttons of digits number
     for(int i=0; i < 10; i++)
     {
         digits.push_back(new QPushButton(QString::number(i)));
@@ -104,17 +100,17 @@ void Calculator::createWidgets()
     enter = new QPushButton("Enter",this);
     enter->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     enter->resize(sizeHint().width(), sizeHint().height());
-
+//clear button for clear  everry input
     Clear = new QPushButton("Clear",this);
     Clear->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     Clear->resize(sizeHint().width(), sizeHint().height());
 
-
+//Button for affiche the porcentage of numbers
     reste = new QPushButton("%",this);
     reste->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     reste->resize(sizeHint().width(), sizeHint().height());
 
-    //operatiosn buttons
+    //operatiosn buttons with style
 
     operations.push_back(new QPushButton("+"));
     operations.back()->setStyleSheet("QPushButton:hover{ background-color: #097DE3;; color: white;}");
@@ -128,7 +124,7 @@ void Calculator::createWidgets()
     operations.back()->setStyleSheet("QPushButton:hover{ background-color: #097DE3;; color: white;}");
     operations.push_back(new QPushButton("+/-"));
     operations.back()->setStyleSheet("QPushButton:hover{ background-color: #097DE3;; color: white;}");
-
+//trigonomy operation
 
     trigono.push_back(new QPushButton("cos"));
     trigono.back()->setStyleSheet("QPushButton:hover{ background-color: #F0E569; color: white;}");
@@ -144,28 +140,23 @@ void Calculator::createWidgets()
     enter->setStyleSheet("QPushButton:hover{ background-color: #f44336; color: white;}");
     //creating the lcd
     disp = new QLCDNumber(this);
-    disp->setDigitCount(6);
+    disp->setDigitCount(6); //for the max number of mdigits is 6 
         disp->setStyleSheet("QLCDNumber{ background-color: rgb(0, 0, 0);border: 2px solid rgb(113, 113, 113);border-width: 2px;border-radius: 10px; color: rgb(255, 255, 255);}");
 
 }
 void Calculator::placeWidget()
-{
-
+{ /for place every push button in the layout
     layout->addWidget(disp);
     layout->addLayout(buttonsLayout);
-
-
     //adding the buttons
     for(int i=1; i <10; i++)
         buttonsLayout->addWidget(digits[i], (i-1)/3, (i-1)%3);
-
     //Adding the operations
     for(int i=0; i < 4; i++){
         buttonsLayout->addWidget(operations[ i], i, 4);
     }
     for(int i=0; i < 5; i++){
         buttonsLayout->addWidget(trigono[ i], i, 5);
-
        }
 
     //Adding the 0 button
@@ -183,11 +174,16 @@ void Calculator::makeConnexions()
     for(int i=0; i <10; i++)
         connect(digits[i], &QPushButton::clicked,
                 this, &Calculator::newDigit);
+                //connectin of the operation
     for(int i=0; i <6; i++)
             connect(operations[i], &QPushButton::clicked,
                     this, &Calculator::changeOperation);
+                    //connecting of  equal button
     connect(enter,&QPushButton::clicked,this,&Calculator::result);
+                        //connecting of  clear button
+
         connect(Clear,&QPushButton::clicked,this,&Calculator::clea);
+                    //connecting of  trigono operation
 
         for(int i=0; i <5; i++)
 
@@ -199,7 +195,7 @@ void Calculator::makeConnexions()
 
 void Calculator::keyPressEvent(QKeyEvent *e)
 {
-
+//for presse the button fom the keypad or keyboard
     //Exiting the application by a click on space
     if( e->key() == Qt::Key_Escape)
         qApp->exit(0);
@@ -233,24 +229,14 @@ void Calculator::keyPressEvent(QKeyEvent *e)
         newoperator(e);
     if( e->key() == Qt::Key_Enter)
         result();
-
-
-
-
-
-    //You could add more keyboard interation here (like digit to button)
 }
 void Calculator::newDigit( )
 {
-
-
-
+//fonction for write the number who have more than 1 number
     //getting the sender
     auto button = dynamic_cast<QPushButton*>(sender());
-
     //getting the value
     float value = button->text().toInt();
-
     //Check if we have an operation defined
     if(operation)
     {
@@ -272,7 +258,7 @@ void Calculator::newDigit( )
 
         disp->display(*left);
     }
-
+//condition for stack the number in variable his name z whine the utilisateur enter new digit for operation of more than two numbers
     if(ab==0){
    z[ab]=*left ;
     }else{z[ab]=*right;}
@@ -283,13 +269,13 @@ void Calculator::changeOperation()
 
 
     if(e==0){
-        auto button = dynamic_cast<QPushButton*>(sender());
+        auto button = dynamic_cast<QPushButton*>(sender());//for get the operation from the pushbutton pressed and stock in button
 
         //Storing the operation
      operation = new QString({button->text()}) ;
         //Initiating the right button
     e=button->text();
-    hg[k]=e;
+    hg[k]=e;//variable for stock the operatio  in table named hg[] for operation of more than two numbers
 k++;
      right = new float{0};
 
@@ -301,7 +287,7 @@ k++;
  e=button->text();
  hg[k]=e;
 k++;
- cd << this->operation;
+//this condition for do the operation and stock the result in the left variable for operation of more than two numbers  because the variable left the only  remmember the number
  if(e==QString("+")){
 
 
@@ -322,7 +308,7 @@ k++;
 
 }
 void Calculator::result(){
-
+//here for show the result of any operation after pressed the enter button
 
     if(*operation=="+"){
         disp->display(*left+(*right));
@@ -351,6 +337,7 @@ void Calculator::result(){
 
 }
 void Calculator::clea(){
+//reset button
  right=nullptr;
     left=nullptr;
     operation=nullptr;
@@ -359,6 +346,7 @@ void Calculator::clea(){
 
 void Calculator::tri(){
     //Getting the sender button
+    //fonction for the trigono operation
     auto button = dynamic_cast<QPushButton*>(sender());
     //Storing the operation
     operation = new QString{button->text()};
@@ -383,7 +371,7 @@ void Calculator::tri(){
 void Calculator::newdig(QKeyEvent *e)
 {
     //getting the sender
-
+//fonction for accept the number from the keypad
 
     //getting the value
     float value = e->text().toInt();
