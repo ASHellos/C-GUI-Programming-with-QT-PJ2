@@ -224,3 +224,452 @@ private:
 
 #endif
 ```
+
+***
+
+## Calculator
+
+'''cpp
+#include "calculator.h"
+#include <QKeyEvent>
+#include <QApplication>
+#include <math.h>
+
+
+Calculator::Calculator(QWidget *parent)
+    : QWidget(parent)
+{
+    createWidgets();
+    placeWidget();
+    makeConnexions();
+     l=0;
+
+}
+
+Calculator::~Calculator()
+{
+    delete disp;
+    delete layout;
+    delete buttonsLayout;
+}
+
+
+void Calculator::createWidgets()
+{
+    //Creating the layouts
+    layout = new QVBoxLayout();
+    layout->setSpacing(2);
+
+    //grid layout
+    buttonsLayout = new QGridLayout;
+//setStyleSheet("QPushButton{background-color:Red; border: none; color: white; padding: 16px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; transition-duration: 0.4s; cursor: pointer;");
+    setStyleSheet("QPushButton{   background-color: Green;  color: white; padding: 15px 32px;  font-size: 20px;  }");
+
+
+
+    //creating the buttons
+    for(int i=0; i < 10; i++)
+    {
+        digits.push_back(new QPushButton(QString::number(i)));
+        digits.back()->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        digits.back()->resize(sizeHint().width(), sizeHint().height());
+        digits.back()->setStyleSheet("QPushButton:hover{ background-color: #f44336; color: white;}");
+    }
+
+
+    //enter button
+    enter = new QPushButton("Enter",this);
+    enter->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+    enter->resize(sizeHint().width(), sizeHint().height());
+
+    Clear = new QPushButton("Clear",this);
+    Clear->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+    Clear->resize(sizeHint().width(), sizeHint().height());
+
+
+    reste = new QPushButton("%",this);
+    reste->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+    reste->resize(sizeHint().width(), sizeHint().height());
+
+    //operatiosn buttons
+
+    operations.push_back(new QPushButton("+"));
+    operations.back()->setStyleSheet("QPushButton:hover{ background-color: #097DE3;; color: white;}");
+    operations.push_back(new QPushButton("-"));
+    operations.back()->setStyleSheet("QPushButton:hover{ background-color: #097DE3; color: white;}");
+    operations.push_back(new QPushButton("*"));
+    operations.back()->setStyleSheet("QPushButton:hover{ background-color: #097DE3;; color: white;}");
+    operations.push_back(new QPushButton("/"));
+    operations.back()->setStyleSheet("QPushButton:hover{ background-color: #097DE3;; color: white;}");
+    operations.push_back(new QPushButton("%"));
+    operations.back()->setStyleSheet("QPushButton:hover{ background-color: #097DE3;; color: white;}");
+    operations.push_back(new QPushButton("+/-"));
+    operations.back()->setStyleSheet("QPushButton:hover{ background-color: #097DE3;; color: white;}");
+
+
+    trigono.push_back(new QPushButton("cos"));
+    trigono.back()->setStyleSheet("QPushButton:hover{ background-color: #F0E569; color: white;}");
+    trigono.push_back(new QPushButton("sin"));
+    trigono.back()->setStyleSheet("QPushButton:hover{ background-color: #02FA3D; color: white;}");
+    trigono.push_back(new QPushButton("tan"));
+    trigono.back()->setStyleSheet("QPushButton:hover{ background-color: #F02E00; color: white;}");
+    trigono.push_back(new QPushButton("acos"));
+    trigono.back()->setStyleSheet("QPushButton:hover{ background-color: #A902FA; color: white;}");
+    trigono.push_back(new QPushButton("asin"));
+    trigono.back()->setStyleSheet("QPushButton:hover{ background-color: #F03DD1; color: white;}");
+    Clear->setStyleSheet("QPushButton:hover{ background-color: #f44336; color: white;}");
+    enter->setStyleSheet("QPushButton:hover{ background-color: #f44336; color: white;}");
+    //creating the lcd
+    disp = new QLCDNumber(this);
+    disp->setDigitCount(6);
+        disp->setStyleSheet("QLCDNumber{ background-color: rgb(0, 0, 0);border: 2px solid rgb(113, 113, 113);border-width: 2px;border-radius: 10px; color: rgb(255, 255, 255);}");
+
+}
+void Calculator::placeWidget()
+{
+
+    layout->addWidget(disp);
+    layout->addLayout(buttonsLayout);
+
+
+    //adding the buttons
+    for(int i=1; i <10; i++)
+        buttonsLayout->addWidget(digits[i], (i-1)/3, (i-1)%3);
+
+    //Adding the operations
+    for(int i=0; i < 4; i++){
+        buttonsLayout->addWidget(operations[ i], i, 4);
+    }
+    for(int i=0; i < 5; i++){
+        buttonsLayout->addWidget(trigono[ i], i, 5);
+
+       }
+
+    //Adding the 0 button
+    buttonsLayout->addWidget(digits[0], 3, 0);
+    buttonsLayout->addWidget(operations[4],3,1);
+    buttonsLayout->addWidget(operations[5],3,2);
+    buttonsLayout->addWidget(enter, 4, 0,1,2);
+    buttonsLayout->addWidget(Clear,4,2,1,3);
+    setLayout(layout);
+}
+
+void Calculator::makeConnexions()
+{
+    //Connecting the digits
+    for(int i=0; i <10; i++)
+        connect(digits[i], &QPushButton::clicked,
+                this, &Calculator::newDigit);
+    for(int i=0; i <6; i++)
+            connect(operations[i], &QPushButton::clicked,
+                    this, &Calculator::changeOperation);
+    connect(enter,&QPushButton::clicked,this,&Calculator::result);
+        connect(Clear,&QPushButton::clicked,this,&Calculator::clea);
+
+        for(int i=0; i <5; i++)
+
+                connect(trigono[i], &QPushButton::clicked,
+                        this, &Calculator::tri);
+
+
+}
+
+void Calculator::keyPressEvent(QKeyEvent *e)
+{
+
+    //Exiting the application by a click on space
+    if( e->key() == Qt::Key_Escape)
+        qApp->exit(0);
+    if( e->key() == Qt::Key_0)
+        newdig(e);
+    if( e->key() == Qt::Key_1)
+        newdig(e);
+    if( e->key() == Qt::Key_2)
+        newdig(e);
+    if( e->key() == Qt::Key_3)
+        newdig(e);
+    if( e->key() == Qt::Key_4)
+        newdig(e);
+    if( e->key() == Qt::Key_5)
+        newdig(e);
+    if( e->key() == Qt::Key_6)
+        newdig(e);
+    if( e->key() == Qt::Key_7)
+        newdig(e);
+    if( e->key() == Qt::Key_8)
+        newdig(e);
+    if( e->key() == Qt::Key_9)
+        newdig(e);
+    if( e->key() == Qt::Key_Plus)
+        newoperator(e);
+    if( e->key() == Qt::Key_Minus)
+        newoperator(e);
+    if( e->key() == Qt::Key_multiply)
+        newoperator(e);
+    if( e->key() == Qt::Key_division)
+        newoperator(e);
+    if( e->key() == Qt::Key_Enter)
+        result();
+
+
+
+
+
+    //You could add more keyboard interation here (like digit to button)
+}
+void Calculator::newDigit( )
+{
+
+
+
+    //getting the sender
+    auto button = dynamic_cast<QPushButton*>(sender());
+
+    //getting the value
+    float value = button->text().toInt();
+
+    //Check if we have an operation defined
+    if(operation)
+    {
+        //check if we have a value or not
+        if(!right)
+            right = new float{value};
+        else
+            *right = 10 * (*right) + value;
+
+        disp->display(*right);
+
+    }
+    else
+    {
+        if(!left)
+            left = new float{value};
+        else
+            *left = 10 * (*left) + value;
+
+        disp->display(*left);
+    }
+
+    if(ab==0){
+   z[ab]=*left ;
+    }else{z[ab]=*right;}
+}
+void Calculator::changeOperation()
+{
+    ab++;
+
+
+    if(e==0){
+        auto button = dynamic_cast<QPushButton*>(sender());
+
+        //Storing the operation
+     operation = new QString({button->text()}) ;
+        //Initiating the right button
+    e=button->text();
+    hg[k]=e;
+k++;
+     right = new float{0};
+
+     //reseting the display
+     disp->display(0);
+}else{
+    //Getting the sender button
+    auto button = dynamic_cast<QPushButton*>(sender());
+ e=button->text();
+ hg[k]=e;
+k++;
+ cd << this->operation;
+ if(e==QString("+")){
+
+
+     *left=(*left+(*right));
+
+ }
+ if(e=="-"){
+     *left=(*left-(*right));
+ }
+ if(e=="*"){
+     *left=(*left*(*right));
+ }
+    right = new float{0};
+    //reseting the display
+
+    disp->display(0);
+    l++;}
+
+}
+void Calculator::result(){
+
+
+    if(*operation=="+"){
+        disp->display(*left+(*right));
+    }
+    if(*operation=="-"){
+        disp->display(*left-(*right));
+    }
+    if(*operation=="*"){
+        disp->display(*left*(*right));
+    }
+    if(*operation=="/"){
+
+            disp->display(*left/(*right));
+
+    }
+    if(*operation=="%"){
+         disp->display(*left*(0.01));
+    }
+    if(*operation=="+/-"){
+         disp->display(*left*(-1));
+    }
+    *left= *left+(*right);
+    *right=0;
+
+    *operation="";
+
+}
+void Calculator::clea(){
+ right=nullptr;
+    left=nullptr;
+    operation=nullptr;
+    disp->display(0);
+}
+
+void Calculator::tri(){
+    //Getting the sender button
+    auto button = dynamic_cast<QPushButton*>(sender());
+    //Storing the operation
+    operation = new QString{button->text()};
+
+    if(*operation=="cos"){
+        disp->display(cos(*left));
+    }
+    if(*operation=="sin"){
+        disp->display(sin(*left));
+    }
+    if(*operation=="tan"){
+        disp->display(tan(*left));
+    }
+    if(*operation=="acos"){
+        disp->display(acos(*left));
+    }
+    if(*operation=="asin"){
+        disp->display(asin(*left));
+    }
+
+          }
+void Calculator::newdig(QKeyEvent *e)
+{
+    //getting the sender
+
+
+    //getting the value
+    float value = e->text().toInt();
+
+    //Check if we have an operation defined
+    if(operation)
+    {
+        //check if we have a value or not
+        if(!right)
+            right = new float{value};
+        else
+            *right = 10 * (*right) + value;
+
+        disp->display(*right);
+
+    }
+    else
+    {
+        if(!left)
+            left = new float{value};
+        else
+            *left = 10 * (*left) + value;
+
+        disp->display(*left);
+    }
+        }
+void Calculator::newoperator(QKeyEvent *e){
+    operation = new QString{e->text()};
+
+    //Initiating the right button
+    right = new float{0};
+
+    //reseting the display
+    disp->display(0);
+                                          }
+'''
+   header
+'''cpp
+   class Calculator : public QWidget
+{
+    Q_OBJECT
+public:
+    Calculator(QWidget *parent = nullptr);
+    ~Calculator();
+
+public slots:
+   void newDigit();
+   void changeOperation();
+   void result();
+   void clea();
+   void tri();
+
+
+
+
+ // Add you custom slots here
+
+protected:
+    void createWidgets();        //Function to create the widgets
+    void placeWidget();         // Function to place the widgets
+    void makeConnexions();// Create all the connectivity
+
+//events
+protected:
+    void keyPressEvent(QKeyEvent *e)override;     //Override the keypress events
+    void newdig(QKeyEvent *e);
+    void newoperator(QKeyEvent *e);
+
+private:
+
+    QGridLayout *buttonsLayout; // layout for the buttons
+    QVBoxLayout *layout;        //main layout for the button
+    QVector<QPushButton*> digits;  //Vector for the digits
+    QPushButton *enter;            // enter button
+    QPushButton *Clear;
+    QPushButton *reste;
+    int z[9];
+    int l;
+    int k=0;
+    QString hg[9];
+    int ab=0;
+    QString e=0;
+
+    QVector<QString*> cb;
+QString *trig=nullptr;
+    QVector<QPushButton*> operations; //operation buttons
+    QVector<QPushButton*> trigono;
+    QLCDNumber *disp;
+    float * right=nullptr;     // right operand
+    // Where to display the numbers
+    float * left=nullptr; //left operand
+
+    QString *operation=nullptr;
+    // Pointer on the current operation
+
+
+};
+   '''
+   
+   '''cpp
+   //main
+   int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    Calculator w;
+    w.setWindowTitle("Calculator");
+    w.resize(500,500);
+    w.show();
+    return a.exec();
+}
+'''
+   
