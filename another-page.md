@@ -229,7 +229,8 @@ private:
 
 ## Calculator
 
-'''cpp
+```cpp
+
 #include "calculator.h"
 #include <QKeyEvent>
 #include <QApplication>
@@ -596,9 +597,13 @@ void Calculator::newoperator(QKeyEvent *e){
     //reseting the display
     disp->display(0);
                                           }
-'''
-   header
-'''cpp
+```
+
+header
+
+
+```cpp
+
    class Calculator : public QWidget
 {
     Q_OBJECT
@@ -658,9 +663,11 @@ QString *trig=nullptr;
 
 
 };
-   '''
-   
-   '''cpp
+
+```
+
+```cpp
+
    //main
    int main(int argc, char *argv[])
 {
@@ -671,5 +678,6 @@ QString *trig=nullptr;
     w.show();
     return a.exec();
 }
-'''
+
+```
    
