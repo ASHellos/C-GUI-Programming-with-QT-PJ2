@@ -661,5 +661,6 @@ private:
 ```
 
 ***
-
+## Conclusion
+After the completion of the work, some of the desired results were reached, but some were not reached due to the lack of clarity in some parts and the difficulty of applying ideas with the available tools such as an LCD.like two operations A process can be performed for more than three operations because it works only if the operations are between + and - as for / and * do not work and give a result without calculating the priority
 
