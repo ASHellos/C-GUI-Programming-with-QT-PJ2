@@ -171,3 +171,47 @@ void TrafficLight::keyPressEvent(QKeyEvent *e){
 
 }
 ```
+<span style="color:orange">trafficlight.h</span>
+```h
+#ifndef TRAFFIC_LIGHT_H
+#define TRAFFIC_LIGHT_H
+
+#include <QWidget>
+#include <QLabel>
+#include <QTime>
+#include <QVector>
+#include<QKeyEvent>
+
+class QRadioButton;
+
+class TrafficLight: public QWidget{
+  Q_OBJECT
+
+public:
+
+  TrafficLight(QWidget * parent = nullptr);
+  void timerEvent(QTimerEvent *e);
+  void keyPressEvent(QKeyEvent *e);
+
+protected:
+     void createWidgets();
+     void placeWidgets();
+
+private:
+     //our Qradiobutton
+  QRadioButton * redlight;
+  QRadioButton * yellowlight;
+  QRadioButton * greenlight;
+  //our qlable
+  QLabel * timeLabel;
+  //our vector of QRadioButton
+  QVector <QRadioButton*> lights;
+  int index ;
+  int times[3]{4,1,2};
+  int currentTime;
+
+};
+
+
+#endif
+```
