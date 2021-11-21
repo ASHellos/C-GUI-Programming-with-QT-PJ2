@@ -22,12 +22,12 @@ and at the end we will use the **QTimer** to simulate a traffic light .
  * * *
 
 # <span style="color:red"> Summary:</span>
- * <span style="color:green"> Calculator</span>
+ * <span style="color:green"> Calculator</span>(#Calcul)
 
- * <span style="color:green"> Traffic Light</span>
+ * <span style="color:green"> Traffic Light</span>(#Traffic)
 
 * * *
-Now we'll start wby:**Calculator**
+Now we'll start wby:**Calculator** {#Calcul}
 
 <span style="color:orange">main.cpp</span>
 ```cpp
@@ -489,7 +489,7 @@ QString *trig=nullptr;
 ```
 
 * *  *
-here **Traffic Light**
+here **Traffic Light** {#Traffic}
 
 <span style="color:orange">main.cpp</span>
 
